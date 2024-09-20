@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --primary: #1e5ddb;
+    --secondaryLight:#98baff;
+    --secondaryDark:#263547;
+    --gradiant: linear-gradient(93.55deg, #1e5ddb 0%, #98baff 100%);
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  color: var(--secondaryDark);
+}
+
+#wrapper {
+    width: 80%;
+    margin: 0;
+    padding: 0 10%;
+}
+
+.welcomeCard {
+
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+
+  width: 92%;
+  height: 20vh;
+
+  padding: 2% 4%;
+  margin-top: 5%;
+
+  background: var(--gradiant) ;
+  border-radius: 15px;
+}
+
+h1 {
+    font-family: "Rubik Mono One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;width: 100px;
+
+    color: white;
+}
+
+#fullstackTag {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+height: 25%;
+margin-bottom: 2%;
+
+    width: fit-content;
+    padding: 0 1%;
+    border-radius: 15px;
+    color: var(--secondaryLight);
+
+align-self: flex-end;
+
+    
+}
