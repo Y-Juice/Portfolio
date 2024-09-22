@@ -9,7 +9,7 @@
 
 body,
 html {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -73,45 +73,262 @@ h2 {
   font-weight: 400;
   font-size: 30px;
   /* identical to box height */
-  margin-top: 15%;
+  margin-top: 5%;
 
   color: #1e5ddb;
 }
 
-
 p {
-    /* Ik ben een student aan Erasmus Hogeschool Brussel, waar ik Multimedia & Creative Technologieën studeer. Als full-stack developer combineer ik mijn passie voor zowel front-end als back-end ontwikkeling. Ik ben altijd op zoek naar nieuwe projecten en freelance opportuniteiten om mijn vaardigheden verder te ontwikkelen. Leergierig en gedreven, blijf ik voortdurend innoveren en nieuwe technologieën ontdekken. */
-font-family: 'Rubik';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
+  /* Ik ben een student aan Erasmus Hogeschool Brussel, waar ik Multimedia & Creative Technologieën studeer. Als full-stack developer combineer ik mijn passie voor zowel front-end als back-end ontwikkeling. Ik ben altijd op zoek naar nieuwe projecten en freelance opportuniteiten om mijn vaardigheden verder te ontwikkelen. Leergierig en gedreven, blijf ik voortdurend innoveren en nieuwe technologieën ontdekken. */
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
 
-color: #263547;
+  padding-right: 10%;
 
-
+  color: #263547;
 }
 
 .heroImg {
-    /* WIN_20240123_15_52_30_Pro 1 */
+  /* WIN_20240123_15_52_30_Pro 1 */
 
-box-sizing: border-box;
+  box-sizing: border-box;
 
-width: 30vw;
-height: 50vh;
+  width: 400px;
+  height: 400px;
 
-
-background: url(../assets/testImg.jpeg);
-border-radius: 15px;
-background-position: center;
-background-size: cover;
+  background: url(../assets/testImg.jpeg);
+  border-radius: 15px;
+  background-position: center;
+  background-size: cover;
+  margin-top: 5%;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-left: 10%;
+  height: 100%;
+  flex-direction: column;
+}
+
+ul li {
+  padding: 3% 3% 2% 3%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+ul li a svg {
+  height: 25px;
+  width: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+ul li a {
+  width: fit-content;
+  height: fit-content;
+}
+
+.heroWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 10%;
+}
+
+.heroTextWrapper {
+  flex: 1;
+}
+
+#projectsWrapper {
+  /* Rectangle 2 */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #263547;
+  border-radius: 15px;
+
+  margin-top: 30%;
+  margin-bottom: 20%;
+}
+
+.midTitle {
+  height: fit-content;
+  width: fit-content;
+}
+
+.project img {
+  height: 150px;
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 5%;
+  width: 30%;
+  padding: 0 0 2% 0;
+  border-radius: 15px;
+}
+
+#projectsGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.projectTitle {
+  font-size: 20px;
+  text-align: center;
+  margin: 0%;
+  margin-top: 10%;
+}
+
+.learnmore {
+  border-style: none;
+  padding: 2% 5%;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  width: 90%;
+
+  /* Rectangle 4 */
+  background: linear-gradient(291.99deg, #1e5ddb 0%, #98baff 100%);
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+}
+
+.learnmore svg {
+  width: 15px;
+  height: 21px;
+  margin-left: 45%;
+}
+
+#contact {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.socialMedia.horizontaal {
+  flex-direction: row;
+  padding: 3% 1%;
+  border-radius: 15px;
+  width: 100%;
+  margin: 0;
+}
+
+.socialMedia.horizontaal li {
+  background: var(--gradiant);
+}
+.socialMedia.horizontaal svg {
+  stroke: white;
+}
+form {
+  background: var(--gradiant);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  padding: 0%;
+  border-radius: 15px;
+}
+.left {
+  flex: 1;
+}
+.right {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin-top: 5%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: left;
+  width: 70%;
+}
+
+input {
+  border-style: none;
+  border-radius: 5px;
+  width: 70%;
+  font-family: "Rubik";
+}
+
+textarea {
+  width: 70%;
+  height: 150px;
+  font-family: "Rubik";
+
+  border-radius: 5px;
+  border-style: none;
+}
+
+form button {
+  margin-top: 10%;
+  margin-bottom: 10%;
+
+  /* Rectangle 9 */
+  background: var(--secondaryDark);
+  border-radius: 15px;
+  border-style: none;
+
+  /* Versturen */
+
+  font-family: "Rubik Mono One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 31px;
+  /* identical to box height */
+  text-align: center;
+  padding: 5% 10%;
+  width: 70%;
+  color: #ffffff;
+}
+
+footer {
+  background-color: var(--secondaryDark);
+  width: 90%;
+margin-top: 20%;
+padding: 0% 5%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .socialMedia.horizontaal {
+  width: 20%;
 }
