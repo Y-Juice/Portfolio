@@ -120,6 +120,7 @@ ul {
 
 ul li {
   padding: 3% 3% 2% 3%;
+  margin-right: 15%;
   border-radius: 10px;
   background-color: white;
 }
@@ -182,18 +183,20 @@ ul li a {
   justify-content: space-evenly;
   align-items: center;
   background-color: #fff;
-  margin-bottom: 5%;
+  margin-bottom: 2.5%;
   width: 30%;
   padding: 0 0 2% 0;
   border-radius: 15px;
+  margin-left: 2.5%;
 }
 
 #projectsGrid {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
   flex-wrap: wrap;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+
 }
 
 .projectTitle {
@@ -211,7 +214,7 @@ ul li a {
   align-items: center;
   justify-content: center;
   margin-top: 10%;
-  width: 90%;
+  width: 70%;
 
   /* Rectangle 4 */
   background: linear-gradient(291.99deg, #1e5ddb 0%, #98baff 100%);
@@ -239,12 +242,12 @@ ul li a {
   flex-direction: row;
   padding: 3% 1%;
   border-radius: 15px;
-  width: 100%;
+  width: 80%;
   margin: 0;
 }
 
 .socialMedia.horizontaal li {
-  background: var(--gradiant);
+  background: var(--primary);
 }
 .socialMedia.horizontaal svg {
   stroke: white;
@@ -260,6 +263,10 @@ form {
   border-radius: 15px;
 }
 .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
   flex: 1;
 }
 .right {
@@ -318,7 +325,7 @@ form button {
 }
 
 footer {
-  background-color: var(--secondaryDark);
+  background-color: var(--primary);
   width: 90%;
 margin-top: 20%;
 padding: 0% 5%;
@@ -332,3 +339,46 @@ padding: 0% 5%;
 footer .socialMedia.horizontaal {
   width: 20%;
 }
+
+footer .socialMedia.horizontaal li {
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.expandEmail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  position:relative;
+  top: -27px;
+  bottom: auto;
+  height: fit-content;
+  padding: 0;
+  transition: 1.5s;
+opacity: 0;
+width: 25px;
+}
+
+.expandEmail h4 {
+padding: 0;
+margin: 0;
+}
+
+ul li {
+  height: 30px;
+}
+
+.emailHover:hover {
+  top: 0;
+}
+.expandEmail:hover {
+width: fit-content;
+  background-color: var(--primary);
+  opacity: 1;
+} 
