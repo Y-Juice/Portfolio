@@ -2,54 +2,97 @@
   "projects": [
     {
       "id": "1",
-      "title": "Yaqin Dashboard",
-      "shortDescription": "A dynamic dashboard built with React and D3.js, featuring real-time data visualization and interactive charts.",
-      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      "fullImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      "technologies": ["React.js", "D3.js", "WebSocket", "SCSS"],
-      "longDescription": "A sophisticated dashboard application that transforms complex data into intuitive visualizations. Built with React and D3.js, this project showcases advanced front-end development skills.",
+      "title": "Yaqin Muslim Toolbox",
+      "shortDescription": "A website that helps muslims find useful resources.",
+      "thumbnail": "../assets/yaqinThumb.png",
+      "fullImage": "../assets/yaqin.png",
+      "technologies": ["MongoDB", "Node.js", "CRUD", "CSS", "Javascript"],
+      "longDescription": "Muslims have to cover themselves from the knee to above the belly button. Clothing that fits these criteria can be hard to find  that is why I wanted to create a hub for muslims with clothing and useful books.",
       "features": [
-        "Real-time data updates with WebSocket integration",
-        "Interactive charts and graphs with D3.js",
-        "Responsive design for all device sizes",
-        "Dark/Light theme support"
+        "CRUD system",
+        "Catalogue of clothing and books from third parties.",
+        "Responsive design for all device sizes"
       ],
-      "demoUrl": "https://dashboard-demo.example.com",
-      "githubUrl": "https://github.com/yourusername/interactive-dashboard"
+      "demoUrl": "https://github.com/EHB-MCT/web2-course-project-front-end-YassineTazi2022/",
+      "githubUrl": "https://github.com/EHB-MCT/web2-course-project-front-end-YassineTazi2022/"
     },
     {
       "id": "2",
-      "title": "E-commerce Platform",
-      "shortDescription": "Modern e-commerce solution using Vue.js and Stripe integration for seamless shopping experience.",
-      "thumbnail": "https://images.unsplash.com/photo-1557821552-17105176677c",
-      "fullImage": "https://images.unsplash.com/photo-1557821552-17105176677c",
-      "technologies": ["Vue.js", "Vuex", "Stripe API", "Firebase"],
-      "longDescription": "A full-featured e-commerce platform built with Vue.js, offering a seamless shopping experience with modern UI/UX principles.",
+      "title": "RentaSPEED 3D-showcase",
+      "shortDescription": "Three.js powered 3D gallery showcasing cars available for rent.",
+      "thumbnail": "../assets/rentaspeedThumb.png",
+      "fullImage": "../assets/rentaspeed.png",
+      "technologies": ["three.js", "CSS", "Javascript"],
+      "longDescription": "An example of how three.js can be used to elevated the user experience and leave a mark on the user. A car rental website that shows of it's rentable cars as a 3d model in a virtual garage. ",
       "features": [
-        "Product catalog with filtering and search",
-        "Shopping cart with Stripe integration",
-        "User authentication and profiles",
-        "Order tracking system"
+        "Welcome page for car rental company",
+        "3D car showcase",
+        "CSS animations"
       ],
-      "demoUrl": "https://ecommerce-demo.example.com",
-      "githubUrl": "https://github.com/yourusername/ecommerce-platform"
+      "demoUrl": "https://y-juice.github.io/ThreeJS/",
+      "githubUrl": "https://github.com/Y-Juice/ThreeJS/"
     },
     {
       "id": "3",
-      "title": "3D Portfolio Gallery",
-      "shortDescription": "Three.js powered 3D gallery showcasing creative work with interactive animations and effects.",
-      "thumbnail": "https://images.unsplash.com/photo-1614624532983-4ce03382d63d",
-      "fullImage": "https://images.unsplash.com/photo-1614624532983-4ce03382d63d",
-      "technologies": ["Three.js", "GSAP", "WebGL", "Custom Shaders"],
-      "longDescription": "An immersive 3D gallery experience powered by Three.js, showcasing creative work in an interactive virtual space.",
+      "title": "The Question of Palestine",
+      "shortDescription": "The Question of Palestine is an educational platform designed to inform users about the history of the Palestine-Israel conflict.",
+      "thumbnail": "../assets/palestineThumb.png",
+      "fullImage": "../assets/palestine.png",
+      "technologies": ["React", "GSAP", "Vite", "CSS", "Javascript"],
+      "longDescription": "The Question of Palestine is an educational platform designed to inform users about the history of the Palestine-Israel conflict. By presenting key events with credible, linked sources, the site encourages independent research and critical thinking, empowering users to form their own educated opinions.",
       "features": [
-        "Interactive 3D environment",
-        "Custom shaders and effects",
-        "Physics-based animations",
-        "Mobile-responsive 3D rendering"
+        "Interactive Timeline",
+        "Typewriter Effect",
+        "Scroll Indicator",
+        "Smooth Navigation"
       ],
-      "demoUrl": "https://3d-gallery-demo.example.com",
-      "githubUrl": "https://github.com/yourusername/3d-portfolio-gallery"
+      "demoUrl": "https://y-juice.github.io/timeline-project/",
+      "githubUrl": "https://github.com/Y-Juice/timeline-project"
+    },
+    {
+      "id": "4",
+      "title": "Omeletaz",
+      "shortDescription": "OmeleTaz is a real-time video chat application.",
+      "thumbnail": "../assets/omeletazThumb.png",
+      "fullImage": "../assets/omeletaz.png",
+      "technologies": [
+        "React",
+        "Firebase",
+        "WebRTC",
+        "Vite",
+        "CSS",
+        "Javascript"
+      ],
+      "longDescription": "OmeleTaz is a real-time video chat application built using React, Firebase Firestore, and WebRTC. This application allows users to Chat and meet other users.",
+      "features": [
+        "Start a webcam video stream",
+        "Create a new video call",
+        "Join an existing video call",
+        "Real-time communication using Firestore",
+        "Responsive design for all device sizes",
+        "Peer-to-peer connection using WebRTC"
+      ],
+      "demoUrl": "https://y-juice.github.io/omeletaz/",
+      "githubUrl": "https://github.com/Y-Juice/omeletaz"
+    },
+    {
+      "id": "5",
+      "title": "AK Building Solutions",
+      "shortDescription": "AK Building Solutions is a Belgium based electric start-up.",
+      "thumbnail": "../assets/akbuildingThumb.png",
+      "fullImage": "../assets/akBuildingSolutions.png",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ],
+      "longDescription": "AK Building Solutions is a Belgium based electric start-up, they needed me to create a sleek and modern website that allows them to attract more customers. In addition I created a typographic logo and worked together with them to find a good look and feel of their brand.",
+      "features": [
+        "Contact function that sends e-mail automatically",
+        "Translate button"
+      ],
+      "demoUrl": "https://akbuildingsolutions.be/",
+      "githubUrl": "https://akbuildingsolutions.be/"
     }
   ]
 }

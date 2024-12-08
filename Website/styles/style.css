@@ -207,10 +207,10 @@ body {
 
 .project-img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   border-radius: 10px;
   margin-bottom: 1rem;
-  background-size: cover !important;
+  background-size:cover !important;
   background-position: center !important;
 }
 
