@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Yaqin Dashboard",
+      "shortDescription": "A dynamic dashboard built with React and D3.js, featuring real-time data visualization and interactive charts.",
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "fullImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "technologies": ["React.js", "D3.js", "WebSocket", "SCSS"],
+      "longDescription": "A sophisticated dashboard application that transforms complex data into intuitive visualizations. Built with React and D3.js, this project showcases advanced front-end development skills.",
+      "features": [
+        "Real-time data updates with WebSocket integration",
+        "Interactive charts and graphs with D3.js",
+        "Responsive design for all device sizes",
+        "Dark/Light theme support"
+      ],
+      "demoUrl": "https://dashboard-demo.example.com",
+      "githubUrl": "https://github.com/yourusername/interactive-dashboard"
+    },
+    {
+      "id": "2",
+      "title": "E-commerce Platform",
+      "shortDescription": "Modern e-commerce solution using Vue.js and Stripe integration for seamless shopping experience.",
+      "thumbnail": "https://images.unsplash.com/photo-1557821552-17105176677c",
+      "fullImage": "https://images.unsplash.com/photo-1557821552-17105176677c",
+      "technologies": ["Vue.js", "Vuex", "Stripe API", "Firebase"],
+      "longDescription": "A full-featured e-commerce platform built with Vue.js, offering a seamless shopping experience with modern UI/UX principles.",
+      "features": [
+        "Product catalog with filtering and search",
+        "Shopping cart with Stripe integration",
+        "User authentication and profiles",
+        "Order tracking system"
+      ],
+      "demoUrl": "https://ecommerce-demo.example.com",
+      "githubUrl": "https://github.com/yourusername/ecommerce-platform"
+    },
+    {
+      "id": "3",
+      "title": "3D Portfolio Gallery",
+      "shortDescription": "Three.js powered 3D gallery showcasing creative work with interactive animations and effects.",
+      "thumbnail": "https://images.unsplash.com/photo-1614624532983-4ce03382d63d",
+      "fullImage": "https://images.unsplash.com/photo-1614624532983-4ce03382d63d",
+      "technologies": ["Three.js", "GSAP", "WebGL", "Custom Shaders"],
+      "longDescription": "An immersive 3D gallery experience powered by Three.js, showcasing creative work in an interactive virtual space.",
+      "features": [
+        "Interactive 3D environment",
+        "Custom shaders and effects",
+        "Physics-based animations",
+        "Mobile-responsive 3D rendering"
+      ],
+      "demoUrl": "https://3d-gallery-demo.example.com",
+      "githubUrl": "https://github.com/yourusername/3d-portfolio-gallery"
+    }
+  ]
+}
