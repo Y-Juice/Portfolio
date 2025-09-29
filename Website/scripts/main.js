@@ -135,12 +135,12 @@ const loadProjects = async () => {
           
           <div class="project-links">
             ${
-              project.demoUrl
+              project.liveDemoEnable === "true" && project.demoUrl
                 ? `<a href="${project.demoUrl}" target="_blank" class="demo-link">Live Demo</a>`
                 : ""
             }
             ${
-              project.githubUrl
+              project.githubUrlEnable === "true" && project.githubUrl
                 ? `<a href="${project.githubUrl}" target="_blank" class="github-link">View on GitHub</a>`
                 : ""
             }
