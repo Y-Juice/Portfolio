@@ -1,0 +1,28 @@
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--accent-color) 70%, transparent);
+  background: color-mix(in srgb, var(--accent-color) 10%, #ffffff);
+  color: var(--accent-color);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  z-index: 11;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(12deg) scale(1.05);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-color) 35%, transparent);
+}
+
+.theme-toggle svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}

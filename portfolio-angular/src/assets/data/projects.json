@@ -1,11 +1,47 @@
 {
   "projects": [
     {
+      "id": "thero-studio",
+      "title": "Thero Studio",
+      "shortDescription": "Angular studio site with clean visuals and smooth interactions.",
+      "thumbnail": "https://images.unsplash.com/photo-1529429617124-aee1f1650a5c?auto=format&fit=crop&w=900&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1529429617124-aee1f1650a5c?auto=format&fit=crop&w=1400&q=80",
+      "technologies": ["Angular", "TypeScript", "SCSS"],
+      "longDescription": "A modern studio landing built with Angular, focusing on crisp layout, responsive sections, and polished motion for a professional showcase.",
+      "features": [
+        "Responsive studio landing",
+        "Section-based layout with smooth scrolling",
+        "Clean typographic system"
+      ],
+      "demoUrl": "https://thero-studio.vercel.app/",
+      "githubUrl": "https://github.com/Y-Juice/thero-studio",
+      "liveDemoEnable": "true",
+      "githubUrlEnable": "true"
+    },
+    {
+      "id": "event-planner",
+      "title": "Event Planner",
+      "shortDescription": "Expo/React Native app for planning and browsing events.",
+      "thumbnail": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
+      "technologies": ["React Native", "Expo", "TypeScript"],
+      "longDescription": "A mobile-first event planning experience with browsing, details, and streamlined navigation built on Expo and React Native.",
+      "features": [
+        "Event browsing and details",
+        "Mobile-first UX",
+        "TypeScript-first codebase"
+      ],
+      "demoUrl": "https://event-planner-ten-lyart.vercel.app/",
+      "githubUrl": "https://github.com/Y-Juice/eventPlanner",
+      "liveDemoEnable": "true",
+      "githubUrlEnable": "true"
+    },
+    {
       "id": "1",
       "title": "Yaqin Muslim Toolbox",
       "shortDescription": "A website that helps muslims find useful resources.",
-      "thumbnail": "../assets/yaqinThumb.png",
-      "fullImage": "../assets/yaqin.png",
+      "thumbnail": "assets/yaqinThumb.png",
+      "fullImage": "assets/yaqin.png",
       "technologies": ["MongoDB", "Node.js", "CRUD", "CSS", "Javascript"],
       "longDescription": "Muslims have to cover themselves from the knee to above the belly button. Clothing that fits these criteria can be hard to find  that is why I wanted to create a hub for muslims with clothing and useful books.",
       "features": [
@@ -22,8 +58,8 @@
       "id": "2",
       "title": "RentaSPEED 3D-showcase",
       "shortDescription": "Three.js powered 3D gallery showcasing cars available for rent.",
-      "thumbnail": "../assets/rentaspeedThumb.png",
-      "fullImage": "../assets/rentaspeed.png",
+      "thumbnail": "assets/rentaspeedThumb.png",
+      "fullImage": "assets/rentaspeed.png",
       "technologies": ["three.js", "CSS", "Javascript"],
       "longDescription": "An example of how three.js can be used to elevated the user experience and leave a mark on the user. A car rental website that shows of it's rentable cars as a 3d model in a virtual garage. ",
       "features": [
@@ -40,8 +76,8 @@
       "id": "3",
       "title": "The Question of Palestine",
       "shortDescription": "The Question of Palestine is an educational website designed to inform users about the history of the Palestine-Israel conflict.",
-      "thumbnail": "../assets/palestineThumb.png",
-      "fullImage": "../assets/palestine.png",
+      "thumbnail": "assets/palestineThumb.png",
+      "fullImage": "assets/palestine.png",
       "technologies": ["React", "GSAP", "Vite", "CSS", "Javascript"],
       "longDescription": "The Question of Palestine is an educational platform designed to inform users about the history of the Palestine-Israel conflict. By presenting key events with credible, linked sources, the site encourages independent research and critical thinking, empowering users to form their own educated opinions.",
       "features": [
@@ -59,8 +95,8 @@
       "id": "4",
       "title": "Omeletaz",
       "shortDescription": "OmeleTaz is a real-time video chat application.",
-      "thumbnail": "../assets/omeletazThumb.png",
-      "fullImage": "../assets/omeletaz.png",
+      "thumbnail": "assets/omeletazThumb.png",
+      "fullImage": "assets/omeletaz.png",
       "technologies": [
         "React",
         "Firebase",
@@ -87,8 +123,8 @@
       "id": "5",
       "title": "AK Building Solutions",
       "shortDescription": "AK Building Solutions is a Belgium based electric start-up.",
-      "thumbnail": "../assets/akbuildingThumb.png",
-      "fullImage": "../assets/akBuildingSolutions.png",
+      "thumbnail": "assets/akbuildingThumb.png",
+      "fullImage": "assets/akBuildingSolutions.png",
       "technologies": ["HTML", "CSS", "Javascript"],
       "longDescription": "AK Building Solutions is a Belgium based electric start-up, they needed me to create a sleek and modern website that allows them to attract more customers. In addition I created a typographic logo and worked together with them to find a good look and feel of their brand.",
       "features": [
