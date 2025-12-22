@@ -1,7 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist/portfolio-angular/browser" } }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist/portfolio-angular/browser" }
+    }
   ],
   "routes": [
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
