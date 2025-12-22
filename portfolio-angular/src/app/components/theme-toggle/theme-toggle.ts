@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './theme-toggle.scss',
 })
 export class ThemeToggle {
+  protected isDark = false;
 
+  protected toggle() {
+    // dark mode removed; toggle does nothing
+  }
 }
