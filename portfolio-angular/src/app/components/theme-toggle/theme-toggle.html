@@ -1,0 +1,12 @@
+<button class="theme-toggle" type="button" (click)="toggle()" [attr.aria-pressed]="isDark">
+  <svg *ngIf="!isDark" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      d="M6.76 4.84 5.35 3.43 3.93 4.85l1.41 1.41 1.42-1.42ZM4 13H1v-2h3v2Zm9-9h-2v3h2V4Zm7.07.85-1.41-1.42-1.42 1.41 1.42 1.42 1.41-1.41ZM17.24 19.16l1.41 1.41 1.42-1.41-1.42-1.42-1.41 1.42ZM20 13h3v-2h-3v2Zm-7 7h-2v3h2v-3ZM4.93 19.07l1.41 1.42 1.42-1.41-1.42-1.42-1.41 1.41ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
+    />
+  </svg>
+  <svg *ngIf="isDark" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      d="M10 2a8 8 0 0 0 0 16c1.93 0 3.69-.71 5.05-1.88A7 7 0 0 1 10 5a7 7 0 0 1 5.05-2.87A7.96 7.96 0 0 0 10 2Z"
+    />
+  </svg>
+</button>

@@ -1,0 +1,49 @@
+<div class="overlay" #overlay (click)="onOverlayClick($event)">
+  <div class="modal" #dialog (click)="$event.stopPropagation()">
+    <button class="close" type="button" aria-label="Close project" (click)="close()">
+      &times;
+    </button>
+
+    <img
+      *ngIf="project?.fullImage"
+      [src]="project?.fullImage"
+      [alt]="project?.title"
+      class="hero-image"
+    />
+
+    <h2>{{ project?.title }}</h2>
+    <p class="long-description">{{ project?.longDescription }}</p>
+
+    <h3>Key Features</h3>
+    <ul class="feature-list">
+      <li *ngFor="let feature of project?.features">{{ feature }}</li>
+    </ul>
+
+    <h3>Technologies</h3>
+    <div class="tag-list">
+      <span class="tag" *ngFor="let tech of project?.technologies">{{ tech }}</span>
+    </div>
+
+    <div class="links">
+      <a
+        *ngIf="project?.liveDemoEnable && project?.demoUrl"
+        class="button primary"
+        [href]="project?.demoUrl"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Live Demo
+      </a>
+
+      <a
+        *ngIf="project?.githubUrlEnable && project?.githubUrl"
+        class="button ghost"
+        [href]="project?.githubUrl"
+        target="_blank"
+        rel="noreferrer"
+      >
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</div>

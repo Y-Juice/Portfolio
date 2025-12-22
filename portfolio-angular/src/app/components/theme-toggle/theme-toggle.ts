@@ -1,23 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { Theme } from '../../services/theme';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-theme-toggle',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './theme-toggle.html',
   styleUrl: './theme-toggle.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemeToggle {
-  constructor(private theme: Theme) {}
 
-  protected toggle() {
-    this.theme.toggle();
-  }
-
-  protected get isDark() {
-    return false; // dark mode removed
-  }
 }

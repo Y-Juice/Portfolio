@@ -1,0 +1,29 @@
+<section class="portfolio">
+  <div class="portfolio-header">
+    <p class="eyebrow">Selected work</p>
+    <h2>Projects</h2>
+    <p class="subtitle">
+      Interactive builds focused on crisp visuals, smooth motion, and clean UX.
+    </p>
+  </div>
+
+  <div class="portfolio-grid">
+    <article
+      class="project-card"
+      *ngFor="let project of projects()"
+      (click)="openProject(project)"
+      #projectCard
+    >
+      <div class="project-img" [style.backgroundImage]="'url(' + project.thumbnail + ')'"></div>
+      <div class="project-content">
+        <h3>{{ project.title }}</h3>
+        <p class="excerpt">{{ project.shortDescription }}</p>
+        <div class="tags">
+          <span class="tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <p class="error" *ngIf="error()">{{ error() }}</p>
+</section>

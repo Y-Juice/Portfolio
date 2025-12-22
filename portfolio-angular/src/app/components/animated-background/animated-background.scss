@@ -1,0 +1,21 @@
+.grid-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns, 20), 1fr);
+  grid-auto-rows: minmax(50px, 1fr);
+  gap: 6px;
+  z-index: 0;
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.grid-cell {
+  background: var(--grid-color);
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--grid-color) 60%, transparent),
+    0 0 14px color-mix(in srgb, var(--grid-color) 40%, transparent);
+  transform-origin: center;
+}
