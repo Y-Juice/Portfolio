@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+tmp/
+temp/
+.angular/
+.idea/
+.vscode/
+*.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.tgz
+coverage/
+
