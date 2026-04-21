@@ -4,15 +4,17 @@ import {
   Component,
   ElementRef,
   ViewChild,
+  computed,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap';
 
-type TechIcon = 'react' | 'html' | 'css' | 'js' | 'three' | 'vite' | 'vue';
+import { ModeService, PortfolioMode } from '../../services/mode';
 
-interface Tech {
+interface SkillGroup {
   label: string;
-  icon: TechIcon;
+  items: string[];
 }
 
 @Component({
@@ -23,26 +25,69 @@ interface Tech {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Hero implements AfterViewInit {
+  private readonly modeService = inject(ModeService);
+
   protected readonly profileImage = 'assets/testImg.jpeg';
   protected readonly name = 'Yassine Tazi';
-  protected readonly role = 'Front-end Developer & React Lover';
   protected readonly description =
-    'Front-end developer who brings designs to life with clean animations and engaging interactions. I love creating sleek, user-friendly, and fun interfaces that stand out.';
+    'Final-year Multimedia & Creative Technologies student at Erasmus University Brussels. I build responsive web and mobile apps with React & TypeScript, and design brand identities and interfaces with a careful, typographic eye.';
 
-  protected readonly techStack: Tech[] = [
-    { label: 'React', icon: 'react' },
-    { label: 'HTML', icon: 'html' },
-    { label: 'CSS', icon: 'css' },
-    { label: 'JavaScript', icon: 'js' },
-    { label: 'Three.js', icon: 'three' },
-    { label: 'Vite', icon: 'vite' },
-    { label: 'Vue', icon: 'vue' },
-  ];
+  protected readonly mode = this.modeService.mode;
+
+  protected readonly role = computed<string>(() =>
+    this.mode() === 'developer' ? 'Front-end Developer' : 'Graphic Designer'
+  );
+
+  protected readonly tagline = computed<string>(() =>
+    this.mode() === 'developer'
+      ? 'Measure craft. Compose interfaces.'
+      : 'Design with intention. Type with care.'
+  );
+
+  protected readonly focus = computed<string>(() =>
+    this.mode() === 'developer' ? 'React & TS' : 'Brand & UI'
+  );
+
+  private readonly developerSkills: SkillGroup = {
+    label: 'Technical toolkit',
+    items: [
+      'React',
+      'TypeScript',
+      'React Native',
+      'JavaScript',
+      'HTML & CSS',
+      'WebRTC',
+      'MongoDB',
+      'Git',
+      'Vite',
+      'Figma',
+    ],
+  };
+
+  private readonly designerSkills: SkillGroup = {
+    label: 'Design toolkit',
+    items: [
+      'Logo Design',
+      'Brand Identity',
+      'Web Design',
+      'App Design',
+      'Poster & Flyer',
+      'Social Media',
+      'Adobe Illustrator',
+      'Adobe Premiere',
+      'Style Guides',
+      'Typography',
+    ],
+  };
+
+  protected readonly skillGroup = computed<SkillGroup>(() =>
+    this.mode() === 'developer' ? this.developerSkills : this.designerSkills
+  );
 
   @ViewChild('titleRef', { static: true }) private titleRef?: ElementRef<HTMLElement>;
   @ViewChild('roleRef', { static: true }) private roleRef?: ElementRef<HTMLElement>;
   @ViewChild('descRef', { static: true }) private descRef?: ElementRef<HTMLElement>;
-  @ViewChild('badgesRef', { static: true }) private badgesRef?: ElementRef<HTMLDivElement>;
+  @ViewChild('badgesRef', { static: false }) private badgesRef?: ElementRef<HTMLDivElement>;
 
   ngAfterViewInit() {
     this.runIntroAnimation();
@@ -50,6 +95,28 @@ export class Hero implements AfterViewInit {
 
   protected formatIndex(index: number): string {
     return (index + 1).toString().padStart(2, '0');
+  }
+
+  protected setMode(next: PortfolioMode) {
+    if (this.mode() === next) {
+      return;
+    }
+    this.modeService.set(next);
+
+    queueMicrotask(() => {
+      if (this.badgesRef?.nativeElement) {
+        const items = this.badgesRef.nativeElement.querySelectorAll('.stack-item');
+        if (items.length) {
+          gsap.from(items, {
+            opacity: 0,
+            y: 6,
+            stagger: 0.03,
+            duration: 0.35,
+            ease: 'power2.out',
+          });
+        }
+      }
+    });
   }
 
   private runIntroAnimation() {

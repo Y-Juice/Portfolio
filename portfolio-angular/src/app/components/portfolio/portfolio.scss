@@ -189,6 +189,31 @@ h2 {
   color: var(--accent);
 }
 
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.empty-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.empty-state p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--muted);
+  margin: 0;
+}
+
 @media (max-width: 960px) {
   .project-card {
     grid-template-columns: 60px 1fr;

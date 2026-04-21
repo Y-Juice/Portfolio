@@ -2,6 +2,7 @@
   "projects": [
     {
       "id": "thero-studio",
+      "type": "developer",
       "title": "Thero Studio",
       "shortDescription": "Angular studio site with clean visuals and smooth interactions.",
       "thumbnail": "https://images.unsplash.com/photo-1529429617124-aee1f1650a5c?auto=format&fit=crop&w=900&q=80",
@@ -20,6 +21,7 @@
     },
     {
       "id": "event-planner",
+      "type": "developer",
       "title": "Event Planner",
       "shortDescription": "Expo/React Native app for planning and browsing events.",
       "thumbnail": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
@@ -37,7 +39,25 @@
       "githubUrlEnable": "true"
     },
     {
+      "id": "petit-moments",
+      "type": "developer",
+      "title": "Petit Moments",
+      "shortDescription": "Bachelor thesis app: pin personal memories to real-world locations.",
+      "thumbnail": "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1400&q=80",
+      "technologies": ["React Native", "MongoDB", "Maps API"],
+      "longDescription": "Mobile app where users pin personal memories to real-world locations on a map, then connect moments across different users to collaboratively build shared stories.",
+      "features": [
+        "Location-based memory pinning with interactive map",
+        "Cross-user story threading into a collective narrative",
+        "Full UX/UI designed in Figma"
+      ],
+      "liveDemoEnable": "false",
+      "githubUrlEnable": "false"
+    },
+    {
       "id": "1",
+      "type": "developer",
       "title": "Yaqin Muslim Toolbox",
       "shortDescription": "A website that helps muslims find useful resources.",
       "thumbnail": "assets/yaqinThumb.png",
@@ -56,6 +76,7 @@
     },
     {
       "id": "2",
+      "type": "developer",
       "title": "RentaSPEED 3D-showcase",
       "shortDescription": "Three.js powered 3D gallery showcasing cars available for rent.",
       "thumbnail": "assets/rentaspeedThumb.png",
@@ -74,6 +95,7 @@
     },
     {
       "id": "3",
+      "type": "developer",
       "title": "The Question of Palestine",
       "shortDescription": "The Question of Palestine is an educational website designed to inform users about the history of the Palestine-Israel conflict.",
       "thumbnail": "assets/palestineThumb.png",
@@ -93,6 +115,7 @@
     },
     {
       "id": "4",
+      "type": "developer",
       "title": "Omeletaz",
       "shortDescription": "OmeleTaz is a real-time video chat application.",
       "thumbnail": "assets/omeletazThumb.png",
@@ -121,6 +144,7 @@
     },
     {
       "id": "5",
+      "type": "developer",
       "title": "AK Building Solutions",
       "shortDescription": "AK Building Solutions is a Belgium based electric start-up.",
       "thumbnail": "assets/akbuildingThumb.png",
@@ -133,6 +157,76 @@
       ],
       "demoUrl": "https://younes-electric.vercel.app/",
       "githubUrl": "https://akbuildingsolutions.be/",
+      "liveDemoEnable": "true",
+      "githubUrlEnable": "false"
+    },
+    {
+      "id": "jongeren-annasr",
+      "type": "designer",
+      "title": "Jongeren Annasr",
+      "shortDescription": "End-to-end visual identity and content strategy for a Vilvoorde youth organisation.",
+      "thumbnail": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=900&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1400&q=80",
+      "technologies": ["Adobe Illustrator", "Figma", "Social Media Design"],
+      "longDescription": "End-to-end visual identity and content strategy for Jongeren Annasr, a Vilvoorde-based youth organisation. The brand was developed from the ground up and extended across print and digital touchpoints.",
+      "features": [
+        "Full brand identity: logo, color system, typography",
+        "Tone of voice and messaging guidelines",
+        "Bilingual (NL/FR) social media content and event visuals",
+        "Consistent visual output across Instagram and community platforms"
+      ],
+      "liveDemoEnable": "false",
+      "githubUrlEnable": "false"
+    },
+    {
+      "id": "intera-studio",
+      "type": "designer",
+      "title": "Intera Studio",
+      "shortDescription": "Design system tool for building structured style guides and CSS tokens.",
+      "thumbnail": "https://images.unsplash.com/photo-1561070791-2526d30994b8?auto=format&fit=crop&w=900&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1561070791-2526d30994b8?auto=format&fit=crop&w=1400&q=80",
+      "technologies": ["Design Tokens", "Style Guides", "CSS"],
+      "longDescription": "Tool for building structured style guides and centralised CSS design system files — collecting colors, typography, spacing, and components in one maintainable source of truth.",
+      "features": [
+        "Scalable design token system (color, type scale, spacing)",
+        "Exportable CSS files consumable in front-end projects",
+        "Bridges the gap between Figma design and development"
+      ],
+      "liveDemoEnable": "false",
+      "githubUrlEnable": "false"
+    },
+    {
+      "id": "petit-moments-design",
+      "type": "designer",
+      "title": "Petit Moments — UX/UI",
+      "shortDescription": "Full UX/UI case for a location-based memory & storytelling app.",
+      "thumbnail": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=900&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1400&q=80",
+      "technologies": ["Figma", "App Design", "UX Research"],
+      "longDescription": "UX/UI design of Petit Moments — the mobile app from my bachelor thesis. The case covers user flows, information architecture, and high-fidelity interface design in Figma.",
+      "features": [
+        "Memory card, map view, and story timeline UI",
+        "User flow and information architecture",
+        "Design system ready for hand-off to development"
+      ],
+      "liveDemoEnable": "false",
+      "githubUrlEnable": "false"
+    },
+    {
+      "id": "ak-brand",
+      "type": "designer",
+      "title": "AK Building Solutions — Identity",
+      "shortDescription": "Typographic logo and brand look & feel for an electric start-up.",
+      "thumbnail": "assets/akbuildingThumb.png",
+      "fullImage": "assets/akBuildingSolutions.png",
+      "technologies": ["Logo Design", "Brand Identity", "Typography"],
+      "longDescription": "Typographic logo and brand identity for AK Building Solutions, a Belgium-based electric start-up. Worked directly with the founders to define the look and feel of the brand across digital touchpoints.",
+      "features": [
+        "Typographic logo construction",
+        "Brand direction and tone",
+        "Applied to the company website and communication"
+      ],
+      "demoUrl": "https://younes-electric.vercel.app/",
       "liveDemoEnable": "true",
       "githubUrlEnable": "false"
     }

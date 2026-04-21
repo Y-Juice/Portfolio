@@ -2,8 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 
+export type ProjectType = 'developer' | 'designer';
+
 export interface Project {
   id: string;
+  type: ProjectType;
   title: string;
   shortDescription: string;
   thumbnail: string;
@@ -19,7 +22,8 @@ export interface Project {
 
 interface ProjectResponse {
   projects: Array<
-    Omit<Project, 'liveDemoEnable' | 'githubUrlEnable'> & {
+    Omit<Project, 'liveDemoEnable' | 'githubUrlEnable' | 'type'> & {
+      type?: ProjectType;
       liveDemoEnable?: string;
       githubUrlEnable?: string;
     }
@@ -39,6 +43,7 @@ export class ProjectService {
       map((response) =>
         response.projects.map((project) => ({
           ...project,
+          type: project.type ?? 'developer',
           thumbnail: this.normalizeAssetPath(project.thumbnail),
           fullImage: this.normalizeAssetPath(project.fullImage),
           liveDemoEnable: project.liveDemoEnable === 'true',
