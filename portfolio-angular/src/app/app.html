@@ -1,8 +1,21 @@
-<app-animated-background></app-animated-background>
-<div class="page-shell">
+<header class="site-header">
+  <div class="site-header-inner">
+    <span class="masthead-title">Yassine Tazi</span>
+    <span class="masthead-meta">Portfolio · Vol. 01 · MMXXVI</span>
+  </div>
+</header>
+
+<main class="page-shell">
   <app-hero></app-hero>
   <app-portfolio (projectSelected)="handleProjectSelect($event)"></app-portfolio>
-</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span class="footer-meta">Designed &amp; built by Yassine Tazi</span>
+    <span class="footer-meta">Erasmus Hogeschool Brussel · MCT</span>
+  </div>
+</footer>
 
 <app-project-modal
   *ngIf="selectedProject()"

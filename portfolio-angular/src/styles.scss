@@ -1,31 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;700&display=swap');
 
 :root {
-  --bg-color: #f5f7fb;
-  --text-color: #0f172a;
-  --muted-text: #475569;
-  --accent-color: #2563eb;
-  --gradient-start: #2563eb;
-  --gradient-end: #5aa6ff;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --border-color: #e5e7eb;
-  --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
-  --grid-color: rgba(37, 99, 235, 0.08);
-  --grid-highlight: rgba(90, 166, 255, 0.2);
-  --noise: repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.04),
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px,
-      transparent 6px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.02),
-      rgba(0, 0, 0, 0.02) 1px,
-      transparent 1px,
-      transparent 6px
-    );
+  --ink: #0f0e0c;
+  --paper: #f5f2eb;
+  --accent: #c84b2f;
+  --muted: #8a8478;
+  --line: #d8d3c8;
+  --correct: #2d7a4f;
+  --wrong: #c84b2f;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+
+  --space-xs: 0.35rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
 }
 
 *,
@@ -34,27 +28,81 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
   min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse at top, rgba(90, 166, 255, 0.18), transparent 48%),
-    radial-gradient(ellipse at 25% 40%, rgba(37, 99, 235, 0.08), transparent 36%),
-    var(--noise);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 31px,
+    var(--line) 31px,
+    var(--line) 32px
+  );
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
 }
 
 a {
   color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }
 
 button {
   font-family: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent-color) 35%, transparent);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Shared utility classes */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
 }

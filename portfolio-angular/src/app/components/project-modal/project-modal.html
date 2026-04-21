@@ -1,8 +1,11 @@
 <div class="overlay" #overlay (click)="onOverlayClick($event)">
-  <div class="modal" #dialog (click)="$event.stopPropagation()">
-    <button class="close" type="button" aria-label="Close project" (click)="close()">
-      &times;
-    </button>
+  <div class="modal" #dialog (click)="$event.stopPropagation()" role="dialog">
+    <div class="modal-top">
+      <span class="modal-eyebrow">Case Study</span>
+      <button class="close" type="button" aria-label="Close project" (click)="close()">
+        <span aria-hidden="true">Close &times;</span>
+      </button>
+    </div>
 
     <img
       *ngIf="project?.fullImage"
@@ -14,14 +17,18 @@
     <h2>{{ project?.title }}</h2>
     <p class="long-description">{{ project?.longDescription }}</p>
 
-    <h3>Key Features</h3>
-    <ul class="feature-list">
-      <li *ngFor="let feature of project?.features">{{ feature }}</li>
-    </ul>
+    <div class="modal-section">
+      <h3>Key Features</h3>
+      <ul class="feature-list">
+        <li *ngFor="let feature of project?.features">{{ feature }}</li>
+      </ul>
+    </div>
 
-    <h3>Technologies</h3>
-    <div class="tag-list">
-      <span class="tag" *ngFor="let tech of project?.technologies">{{ tech }}</span>
+    <div class="modal-section">
+      <h3>Technologies</h3>
+      <div class="tag-list">
+        <span class="tag" *ngFor="let tech of project?.technologies">{{ tech }}</span>
+      </div>
     </div>
 
     <div class="links">
@@ -32,7 +39,7 @@
         target="_blank"
         rel="noreferrer"
       >
-        Live Demo
+        Live Demo &rarr;
       </a>
 
       <a
@@ -42,7 +49,7 @@
         target="_blank"
         rel="noreferrer"
       >
-        View on GitHub
+        View on GitHub &rarr;
       </a>
     </div>
   </div>

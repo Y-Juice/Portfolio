@@ -48,6 +48,10 @@ export class Hero implements AfterViewInit {
     this.runIntroAnimation();
   }
 
+  protected formatIndex(index: number): string {
+    return (index + 1).toString().padStart(2, '0');
+  }
+
   private runIntroAnimation() {
     const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -64,9 +68,9 @@ export class Hero implements AfterViewInit {
     }
 
     if (this.badgesRef?.nativeElement) {
-      const badges = this.badgesRef.nativeElement.querySelectorAll('.tech-badge');
+      const badges = this.badgesRef.nativeElement.querySelectorAll('.stack-item');
       if (badges.length) {
-        timeline.from(badges, { opacity: 0, y: 10, stagger: 0.08, duration: 0.5 }, '-=0.2');
+        timeline.from(badges, { opacity: 0, y: 10, stagger: 0.05, duration: 0.5 }, '-=0.2');
       }
     }
   }

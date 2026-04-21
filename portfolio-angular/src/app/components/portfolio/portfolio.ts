@@ -54,6 +54,10 @@ export class Portfolio implements OnInit, AfterViewInit {
     this.projectSelected.emit(project);
   }
 
+  protected formatIndex(index: number): string {
+    return (index + 1).toString().padStart(2, '0');
+  }
+
   private animateCards() {
     const cards = this.projectCards?.toArray().map((ref) => ref.nativeElement) ?? [];
 
