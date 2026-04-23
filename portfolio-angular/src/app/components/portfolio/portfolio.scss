@@ -14,12 +14,60 @@
   border-bottom: 1px solid var(--line);
 }
 
+.portfolio-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .section-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.mode-switch {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.mode-option {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--ink);
+  border: none;
+  border-right: 1px solid var(--ink);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mode-option:last-child {
+  border-right: none;
+}
+
+.mode-option:hover:not(.active) {
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.mode-option.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+@media (max-width: 480px) {
+  .mode-option {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.65rem;
+  }
 }
 
 h2 {

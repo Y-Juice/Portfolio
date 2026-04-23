@@ -1,29 +1,7 @@
 <section class="hero">
   <div class="hero-top">
-    <span class="issue-tag" #roleRef>{{ role() }}</span>
-
-    <div class="mode-switch" role="tablist" aria-label="Portfolio mode">
-      <button
-        type="button"
-        role="tab"
-        class="mode-option"
-        [class.active]="mode() === 'developer'"
-        [attr.aria-selected]="mode() === 'developer'"
-        (click)="setMode('developer')"
-      >
-        Developer
-      </button>
-      <button
-        type="button"
-        role="tab"
-        class="mode-option"
-        [class.active]="mode() === 'designer'"
-        [attr.aria-selected]="mode() === 'designer'"
-        (click)="setMode('designer')"
-      >
-        Designer
-      </button>
-    </div>
+    <span class="issue-tag" #roleRef>{{ role }}</span>
+    <span class="issue-date">Edition · MMXXVI</span>
   </div>
 
   <div class="hero-main">
@@ -31,7 +9,7 @@
 
     <div class="hero-text">
       <h1 #titleRef>{{ name }}</h1>
-      <p class="tagline">{{ tagline() }}</p>
+      <p class="tagline">{{ tagline }}</p>
       <p class="description" #descRef>{{ description }}</p>
     </div>
   </div>
@@ -39,11 +17,11 @@
   <div class="meta-grid">
     <div class="meta-cell">
       <span class="meta-label">Discipline</span>
-      <span class="meta-value">{{ role() }}</span>
+      <span class="meta-value">Dev &amp; Design</span>
     </div>
     <div class="meta-cell">
       <span class="meta-label">Focus</span>
-      <span class="meta-value">{{ focus() }}</span>
+      <span class="meta-value">React &amp; TS</span>
     </div>
     <div class="meta-cell">
       <span class="meta-label">Based in</span>
@@ -55,13 +33,15 @@
     </div>
   </div>
 
-  <div class="stack">
-    <span class="stack-label">{{ skillGroup().label }}</span>
-    <div class="stack-list" #badgesRef>
-      <span class="stack-item" *ngFor="let skill of skillGroup().items; let i = index">
-        <span class="stack-code">{{ formatIndex(i) }}</span>
-        <span class="stack-name">{{ skill }}</span>
-      </span>
+  <div class="stack-groups" #badgesRef>
+    <div class="stack" *ngFor="let group of skillGroups">
+      <span class="stack-label">{{ group.label }}</span>
+      <div class="stack-list">
+        <span class="stack-item" *ngFor="let skill of group.items; let i = index">
+          <span class="stack-code">{{ formatIndex(i) }}</span>
+          <span class="stack-name">{{ skill }}</span>
+        </span>
+      </div>
     </div>
   </div>
 </section>

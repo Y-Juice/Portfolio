@@ -19,7 +19,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { gsap } from 'gsap';
 
 import { Project, ProjectService } from '../../services/project';
-import { ModeService } from '../../services/mode';
+import { ModeService, PortfolioMode } from '../../services/mode';
 
 @Component({
   selector: 'app-portfolio',
@@ -74,6 +74,10 @@ export class Portfolio implements OnInit, AfterViewInit {
 
   protected openProject(project: Project) {
     this.projectSelected.emit(project);
+  }
+
+  protected setMode(next: PortfolioMode) {
+    this.modeService.set(next);
   }
 
   protected formatIndex(index: number): string {

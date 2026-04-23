@@ -1,6 +1,32 @@
 <section class="portfolio">
   <div class="portfolio-header">
-    <span class="section-eyebrow">{{ sectionMeta().eyebrow }}</span>
+    <div class="portfolio-header-top">
+      <span class="section-eyebrow">{{ sectionMeta().eyebrow }}</span>
+
+      <div class="mode-switch" role="tablist" aria-label="Project filter">
+        <button
+          type="button"
+          role="tab"
+          class="mode-option"
+          [class.active]="mode() === 'developer'"
+          [attr.aria-selected]="mode() === 'developer'"
+          (click)="setMode('developer')"
+        >
+          Development
+        </button>
+        <button
+          type="button"
+          role="tab"
+          class="mode-option"
+          [class.active]="mode() === 'designer'"
+          [attr.aria-selected]="mode() === 'designer'"
+          (click)="setMode('designer')"
+        >
+          Design
+        </button>
+      </div>
+    </div>
+
     <h2>{{ mode() === 'developer' ? 'Projects' : 'Design Work' }}</h2>
     <p class="subtitle">{{ sectionMeta().subtitle }}</p>
   </div>
