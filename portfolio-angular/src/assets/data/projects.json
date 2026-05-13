@@ -4,14 +4,14 @@
       "id": "thero-studio",
       "type": "developer",
       "title": "Thero Studio",
-      "shortDescription": "Angular studio site with clean visuals and smooth interactions.",
+      "shortDescription": "Angular website toolkit where developers can customize, build and export their own all-in-one CSS file with all stylistic choices.",
       "thumbnail": "https://images.unsplash.com/photo-1529429617124-aee1f1650a5c?auto=format&fit=crop&w=900&q=80",
       "fullImage": "https://images.unsplash.com/photo-1529429617124-aee1f1650a5c?auto=format&fit=crop&w=1400&q=80",
       "technologies": ["Angular", "TypeScript", "SCSS"],
-      "longDescription": "A modern studio landing built with Angular, focusing on crisp layout, responsive sections, and polished motion for a professional showcase.",
+      "longDescription": "Angular website toolkit where developers can customize, build and export their own all-in-one CSS file with all stylistic choices. As well as being able to export a full starting file for react and angular, including your CSS file.",
       "features": [
-        "Responsive studio landing",
-        "Section-based layout with smooth scrolling",
+        "Customizable CSS file",
+        "Exportable starting files for React and Angular",
         "Clean typographic system"
       ],
       "demoUrl": "https://thero-studio.vercel.app/",
@@ -28,11 +28,7 @@
       "fullImage": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
       "technologies": ["React Native", "Expo", "TypeScript"],
       "longDescription": "A mobile-first event planning experience with browsing, details, and streamlined navigation built on Expo and React Native.",
-      "features": [
-        "Event browsing and details",
-        "Mobile-first UX",
-        "TypeScript-first codebase"
-      ],
+      "features": ["Event browsing and details", "Mobile-first UX", "TypeScript-first codebase"],
       "demoUrl": "https://event-planner-ten-lyart.vercel.app/",
       "githubUrl": "https://github.com/Y-Juice/eventPlanner",
       "liveDemoEnable": "true",
@@ -83,11 +79,7 @@
       "fullImage": "assets/rentaspeed.png",
       "technologies": ["three.js", "CSS", "Javascript"],
       "longDescription": "An example of how three.js can be used to elevated the user experience and leave a mark on the user. A car rental website that shows of it's rentable cars as a 3d model in a virtual garage. ",
-      "features": [
-        "Welcome page for car rental company",
-        "3D car showcase",
-        "CSS animations"
-      ],
+      "features": ["Welcome page for car rental company", "3D car showcase", "CSS animations"],
       "demoUrl": "https://y-juice.github.io/ThreeJS/",
       "githubUrl": "https://github.com/Y-Juice/ThreeJS/",
       "liveDemoEnable": "false",
@@ -120,14 +112,7 @@
       "shortDescription": "OmeleTaz is a real-time video chat application.",
       "thumbnail": "assets/omeletazThumb.png",
       "fullImage": "assets/omeletaz.png",
-      "technologies": [
-        "React",
-        "Firebase",
-        "WebRTC",
-        "Vite",
-        "CSS",
-        "Javascript"
-      ],
+      "technologies": ["React", "Firebase", "WebRTC", "Vite", "CSS", "Javascript"],
       "longDescription": "OmeleTaz is a real-time video chat application built using React, Firebase Firestore, and WebRTC. This application allows users to Chat and meet other users.",
       "features": [
         "Start a webcam video stream",
@@ -151,10 +136,7 @@
       "fullImage": "assets/akBuildingSolutions.png",
       "technologies": ["HTML", "CSS", "Javascript"],
       "longDescription": "AK Building Solutions is a Belgium based electric start-up, they needed me to create a sleek and modern website that allows them to attract more customers. In addition I created a typographic logo and worked together with them to find a good look and feel of their brand.",
-      "features": [
-        "Contact function that sends e-mail automatically",
-        "Translate button"
-      ],
+      "features": ["Contact function that sends e-mail automatically", "Translate button"],
       "demoUrl": "https://younes-electric.vercel.app/",
       "githubUrl": "https://akbuildingsolutions.be/",
       "liveDemoEnable": "true",

@@ -309,6 +309,12 @@ h1 span {
   color: var(--correct);
 }
 
+.stack-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
 .stack {
   display: flex;
   flex-direction: column;

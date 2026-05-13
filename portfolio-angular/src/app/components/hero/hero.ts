@@ -4,13 +4,9 @@ import {
   Component,
   ElementRef,
   ViewChild,
-  computed,
-  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap';
-
-import { ModeService, PortfolioMode } from '../../services/mode';
 
 interface SkillGroup {
   label: string;
@@ -25,10 +21,10 @@ interface SkillGroup {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Hero implements AfterViewInit {
-  private readonly modeService = inject(ModeService);
-
   protected readonly profileImage = 'assets/testImg.jpeg';
   protected readonly name = 'Yassine Tazi';
+  protected readonly role = 'Front-end Developer · Graphic Designer';
+  protected readonly tagline = 'Measure craft. Compose interfaces.';
   protected readonly description =
     'Final-year Multimedia & Creative Technologies student at Erasmus University Brussels. I create responsive sites, mobile apps, and visual identities with a focus on clear structure, bold typography, and smooth user journeys.';
   protected readonly servicePillars = [
@@ -100,7 +96,7 @@ export class Hero implements AfterViewInit {
   @ViewChild('titleRef', { static: true }) private titleRef?: ElementRef<HTMLElement>;
   @ViewChild('roleRef', { static: true }) private roleRef?: ElementRef<HTMLElement>;
   @ViewChild('descRef', { static: true }) private descRef?: ElementRef<HTMLElement>;
-  @ViewChild('badgesRef', { static: false }) private badgesRef?: ElementRef<HTMLDivElement>;
+  @ViewChild('badgesRef', { static: true }) private badgesRef?: ElementRef<HTMLDivElement>;
 
   ngAfterViewInit() {
     this.runIntroAnimation();
@@ -108,28 +104,6 @@ export class Hero implements AfterViewInit {
 
   protected formatIndex(index: number): string {
     return (index + 1).toString().padStart(2, '0');
-  }
-
-  protected setMode(next: PortfolioMode) {
-    if (this.mode() === next) {
-      return;
-    }
-    this.modeService.set(next);
-
-    queueMicrotask(() => {
-      if (this.badgesRef?.nativeElement) {
-        const items = this.badgesRef.nativeElement.querySelectorAll('.stack-item');
-        if (items.length) {
-          gsap.from(items, {
-            opacity: 0,
-            y: 6,
-            stagger: 0.03,
-            duration: 0.35,
-            ease: 'power2.out',
-          });
-        }
-      }
-    });
   }
 
   private runIntroAnimation() {
@@ -150,7 +124,7 @@ export class Hero implements AfterViewInit {
     if (this.badgesRef?.nativeElement) {
       const badges = this.badgesRef.nativeElement.querySelectorAll('.stack-item');
       if (badges.length) {
-        timeline.from(badges, { opacity: 0, y: 10, stagger: 0.05, duration: 0.5 }, '-=0.2');
+        timeline.from(badges, { opacity: 0, y: 10, stagger: 0.04, duration: 0.5 }, '-=0.2');
       }
     }
   }

@@ -65,11 +65,11 @@
   <div class="meta-grid">
     <div class="meta-cell">
       <span class="meta-label">Discipline</span>
-      <span class="meta-value">{{ role() }}</span>
+      <span class="meta-value">Dev &amp; Design</span>
     </div>
     <div class="meta-cell">
       <span class="meta-label">Focus</span>
-      <span class="meta-value">{{ focus() }}</span>
+      <span class="meta-value">React &amp; TS</span>
     </div>
     <div class="meta-cell">
       <span class="meta-label">Based in</span>
@@ -81,13 +81,15 @@
     </div>
   </div>
 
-  <div class="stack">
-    <span class="stack-label">{{ skillGroup().label }}</span>
-    <div class="stack-list" #badgesRef>
-      <span class="stack-item" *ngFor="let skill of skillGroup().items; let i = index">
-        <span class="stack-code">{{ formatIndex(i) }}</span>
-        <span class="stack-name">{{ skill }}</span>
-      </span>
+  <div class="stack-groups" #badgesRef>
+    <div class="stack" *ngFor="let group of skillGroups">
+      <span class="stack-label">{{ group.label }}</span>
+      <div class="stack-list">
+        <span class="stack-item" *ngFor="let skill of group.items; let i = index">
+          <span class="stack-code">{{ formatIndex(i) }}</span>
+          <span class="stack-name">{{ skill }}</span>
+        </span>
+      </div>
     </div>
   </div>
 </section>
