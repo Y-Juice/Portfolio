@@ -3,15 +3,19 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 .portfolio-header {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 520px);
   gap: var(--space-sm);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--line);
+  align-items: end;
+  padding: var(--space-2xl);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
 }
 
 .section-eyebrow {
@@ -19,47 +23,59 @@
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--muted);
+  grid-column: 1 / -1;
 }
 
 h2 {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.09em;
+  text-transform: uppercase;
   color: var(--ink);
 }
 
 .subtitle {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--muted);
-  max-width: 55ch;
+  max-width: 48ch;
 }
 
 .portfolio-list {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
 }
 
 .project-card {
   display: grid;
-  grid-template-columns: 80px 220px 1fr 140px;
+  grid-template-columns: 72px 1fr;
+  grid-template-areas:
+    'index image'
+    'content content'
+    'cta cta';
   gap: var(--space-lg);
-  align-items: start;
-  padding: var(--space-lg) 0;
-  border-bottom: 1px solid var(--line);
+  align-items: stretch;
+  padding: var(--space-lg);
+  min-height: 620px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: background 0.2s ease;
+  box-shadow: 0 20px 55px color-mix(in srgb, var(--ink) 8%, transparent);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
-  background: color-mix(in srgb, var(--ink) 4%, transparent);
+  background: var(--surface-soft);
+  box-shadow: 0 28px 70px color-mix(in srgb, var(--ink) 12%, transparent);
+  transform: translateY(-4px);
 }
 
 .project-card:hover .cta-arrow {
@@ -76,6 +92,7 @@ h2 {
 }
 
 .project-index {
+  grid-area: index;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -84,7 +101,7 @@ h2 {
 
 .index-num {
   font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--ink);
   letter-spacing: 0.05em;
@@ -99,31 +116,49 @@ h2 {
 }
 
 .project-img {
+  grid-area: image;
   width: 100%;
-  height: 150px;
+  min-height: 300px;
   background-size: cover;
   background-position: center;
   border: 1px solid var(--line);
-  filter: grayscale(0.1) contrast(1.02);
-  transition: filter 0.3s ease;
+  border-radius: var(--radius-md);
+  filter: grayscale(0.25) contrast(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .project-card:hover .project-img {
   filter: grayscale(0) contrast(1.05);
+  transform: scale(1.01);
 }
 
 .project-content {
+  grid-area: content;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  justify-content: end;
+}
+
+.project-type {
+  width: fit-content;
+  padding: 0.35rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--accent);
+  border-radius: 999px;
 }
 
 .project-content h3 {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.8rem;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
   color: var(--ink);
   transition: color 0.2s ease;
 }
@@ -149,17 +184,20 @@ h2 {
   font-size: 0.62rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--paper);
-  background: var(--muted);
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
   padding: 0.3rem 0.55rem;
 }
 
 .project-cta {
+  grid-area: cta;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 0.5rem;
-  padding-top: 0.35rem;
+  padding-top: var(--space-md);
 }
 
 .cta-text {
@@ -175,8 +213,14 @@ h2 {
   font-family: var(--font-mono);
   font-size: 1rem;
   color: var(--ink);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
   transition: transform 0.25s ease, color 0.2s ease;
-  display: inline-block;
 }
 
 .error {
@@ -194,8 +238,9 @@ h2 {
   flex-direction: column;
   gap: 0.5rem;
   padding: var(--space-xl) 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
   text-align: center;
 }
 
@@ -208,20 +253,28 @@ h2 {
 }
 
 .empty-state p {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-display);
+  font-weight: 800;
   color: var(--muted);
   margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .portfolio-header,
+  .portfolio-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 960px) {
   .project-card {
     grid-template-columns: 60px 1fr;
     grid-template-areas:
-      'index content'
-      'image image'
+      'index image'
+      'content content'
       'cta cta';
     gap: var(--space-md);
+    min-height: auto;
   }
 
   .project-index {
@@ -230,7 +283,7 @@ h2 {
 
   .project-img {
     grid-area: image;
-    height: 220px;
+    min-height: 220px;
   }
 
   .project-content {
@@ -245,7 +298,12 @@ h2 {
 }
 
 @media (max-width: 480px) {
+  .portfolio-header,
+  .project-card {
+    padding: var(--space-md);
+  }
+
   .project-content h3 {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 }

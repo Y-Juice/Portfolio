@@ -41,8 +41,16 @@ export class Portfolio implements OnInit, AfterViewInit {
 
   protected readonly sectionMeta = computed(() =>
     this.mode() === 'developer'
-      ? { eyebrow: '§ 02 · Selected Work', subtitle: 'Interactive builds focused on crisp typography, careful motion, and clean UX.' }
-      : { eyebrow: '§ 02 · Design Work', subtitle: 'Visual identity, editorial systems, and interface design with a typographic backbone.' }
+      ? {
+          eyebrow: 'Selected ecommerce-minded builds',
+          subtitle:
+            'Responsive web and app projects shaped like small launch systems: clear pages, sharp interfaces, and focused user flows.',
+        }
+      : {
+          eyebrow: 'Brand and interface systems',
+          subtitle:
+            'Visual identities, editorial layouts, and digital design work built to feel direct, structured, and memorable.',
+        }
   );
 
   @Output() projectSelected = new EventEmitter<Project>();

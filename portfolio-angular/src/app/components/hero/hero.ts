@@ -30,7 +30,20 @@ export class Hero implements AfterViewInit {
   protected readonly profileImage = 'assets/testImg.jpeg';
   protected readonly name = 'Yassine Tazi';
   protected readonly description =
-    'Final-year Multimedia & Creative Technologies student at Erasmus University Brussels. I build responsive web and mobile apps with React & TypeScript, and design brand identities and interfaces with a careful, typographic eye.';
+    'Final-year Multimedia & Creative Technologies student at Erasmus University Brussels. I create responsive sites, mobile apps, and visual identities with a focus on clear structure, bold typography, and smooth user journeys.';
+  protected readonly servicePillars = [
+    'Web design',
+    'Front-end development',
+    'Mobile apps',
+    'Brand identity',
+    'UI systems',
+    'Motion details',
+  ];
+  protected readonly proofPoints = [
+    { value: '10+', label: 'Projects shipped' },
+    { value: '2', label: 'Creative modes' },
+    { value: 'BE', label: 'Based in Vilvoorde' },
+  ];
 
   protected readonly mode = this.modeService.mode;
 
@@ -40,8 +53,8 @@ export class Hero implements AfterViewInit {
 
   protected readonly tagline = computed<string>(() =>
     this.mode() === 'developer'
-      ? 'Measure craft. Compose interfaces.'
-      : 'Design with intention. Type with care.'
+      ? 'Built for clean digital launches.'
+      : 'Visual systems for brands with momentum.'
   );
 
   protected readonly focus = computed<string>(() =>

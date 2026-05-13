@@ -1,6 +1,6 @@
 <section class="hero">
   <div class="hero-top">
-    <span class="issue-tag" #roleRef>{{ role() }}</span>
+    <span class="issue-tag" #roleRef>Built for growth · {{ role() }}</span>
 
     <div class="mode-switch" role="tablist" aria-label="Portfolio mode">
       <button
@@ -27,12 +27,38 @@
   </div>
 
   <div class="hero-main">
-    <img [src]="profileImage" alt="Portrait of {{ name }}" class="profile-image" />
-
     <div class="hero-text">
-      <h1 #titleRef>{{ name }}</h1>
+      <span class="hero-kicker">Portfolio for digital products and brands</span>
+      <h1 #titleRef>
+        Built for<br />
+        <span>growth</span>
+      </h1>
       <p class="tagline">{{ tagline() }}</p>
       <p class="description" #descRef>{{ description }}</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#work">Explore work</a>
+        <a class="button ghost" href="mailto:yassine.tazi@hotmail.com">Work with me</a>
+      </div>
+    </div>
+
+    <aside class="hero-panel" id="about">
+      <img [src]="profileImage" alt="Portrait of {{ name }}" class="profile-image" />
+      <div class="panel-copy">
+        <span>Selected maker</span>
+        <strong>{{ name }}</strong>
+        <p>{{ focus() }} · Erasmus Hogeschool Brussel</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="service-strip" id="services" aria-label="Services">
+    <span *ngFor="let service of servicePillars">{{ service }}</span>
+  </div>
+
+  <div class="proof-grid">
+    <div class="proof-cell" *ngFor="let point of proofPoints">
+      <strong>{{ point.value }}</strong>
+      <span>{{ point.label }}</span>
     </div>
   </div>
 

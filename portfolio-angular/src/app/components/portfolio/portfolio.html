@@ -1,7 +1,7 @@
-<section class="portfolio">
+<section class="portfolio" id="work">
   <div class="portfolio-header">
     <span class="section-eyebrow">{{ sectionMeta().eyebrow }}</span>
-    <h2>{{ mode() === 'developer' ? 'Projects' : 'Design Work' }}</h2>
+    <h2>{{ mode() === 'developer' ? 'Digital work that moves' : 'Design work that leads' }}</h2>
     <p class="subtitle">{{ sectionMeta().subtitle }}</p>
   </div>
 
@@ -20,6 +20,7 @@
       <div class="project-img" [style.backgroundImage]="'url(' + project.thumbnail + ')'"></div>
 
       <div class="project-content">
+        <span class="project-type">{{ project.type === 'developer' ? 'Build' : 'Design' }}</span>
         <h3>{{ project.title }}</h3>
         <p class="excerpt">{{ project.shortDescription }}</p>
         <div class="tags">
@@ -28,7 +29,7 @@
       </div>
 
       <div class="project-cta">
-        <span class="cta-text">Read case</span>
+        <span class="cta-text">View project</span>
         <span class="cta-arrow">&rarr;</span>
       </div>
     </article>
