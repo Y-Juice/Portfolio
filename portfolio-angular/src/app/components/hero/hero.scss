@@ -165,6 +165,7 @@ h1 span {
   padding: 0.85rem 1.25rem;
   border: 1px solid var(--paper);
   border-radius: 999px;
+  background: transparent;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.16em;
@@ -244,10 +245,6 @@ h1 span {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-align: center;
-}
-
-.service-strip span:last-child {
-  border-right: none;
 }
 
 .proof-grid {

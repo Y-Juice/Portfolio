@@ -4,9 +4,14 @@ import {
   Component,
   ElementRef,
   ViewChild,
+  computed,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap';
+
+import { Contact } from '../../services/contact';
+import { ModeService, PortfolioMode } from '../../services/mode';
 
 interface SkillGroup {
   label: string;
@@ -21,10 +26,11 @@ interface SkillGroup {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Hero implements AfterViewInit {
+  private readonly contact = inject(Contact);
+  private readonly modeService = inject(ModeService);
+
   protected readonly profileImage = 'assets/testImg.jpeg';
   protected readonly name = 'Yassine Tazi';
-  protected readonly role = 'Front-end Developer · Graphic Designer';
-  protected readonly tagline = 'Measure craft. Compose interfaces.';
   protected readonly description =
     'Final-year Multimedia & Creative Technologies student at Erasmus University Brussels. I create responsive sites, mobile apps, and visual identities with a focus on clear structure, bold typography, and smooth user journeys.';
   protected readonly servicePillars = [
@@ -92,6 +98,7 @@ export class Hero implements AfterViewInit {
   protected readonly skillGroup = computed<SkillGroup>(() =>
     this.mode() === 'developer' ? this.developerSkills : this.designerSkills
   );
+  protected readonly skillGroups = [this.developerSkills, this.designerSkills];
 
   @ViewChild('titleRef', { static: true }) private titleRef?: ElementRef<HTMLElement>;
   @ViewChild('roleRef', { static: true }) private roleRef?: ElementRef<HTMLElement>;
@@ -104,6 +111,18 @@ export class Hero implements AfterViewInit {
 
   protected formatIndex(index: number): string {
     return (index + 1).toString().padStart(2, '0');
+  }
+
+  protected setMode(next: PortfolioMode) {
+    if (this.mode() === next) {
+      return;
+    }
+
+    this.modeService.set(next);
+  }
+
+  protected openContactPopup() {
+    this.contact.open();
   }
 
   private runIntroAnimation() {

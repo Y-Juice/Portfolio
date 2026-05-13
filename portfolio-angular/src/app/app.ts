@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 import { Hero } from './components/hero/hero';
 import { Portfolio } from './components/portfolio/portfolio';
 import { ProjectModal } from './components/project-modal/project-modal';
 import { ThemeToggle } from './components/theme-toggle/theme-toggle';
+import { Contact } from './services/contact';
 import { Project } from './services/project';
 
 @Component({
@@ -15,6 +16,7 @@ import { Project } from './services/project';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
+  protected readonly contact = inject(Contact);
   protected selectedProject = signal<Project | null>(null);
 
   protected handleProjectSelect(project: Project) {
@@ -23,5 +25,13 @@ export class App {
 
   protected handleModalClose() {
     this.selectedProject.set(null);
+  }
+
+  protected openContactPopup() {
+    this.contact.open();
+  }
+
+  protected closeContactPopup() {
+    this.contact.close();
   }
 }
