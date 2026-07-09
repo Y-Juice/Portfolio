@@ -4,14 +4,12 @@ import {
   Component,
   ElementRef,
   ViewChild,
-  computed,
   inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap';
 
 import { Contact } from '../../services/contact';
-import { ModeService, PortfolioMode } from '../../services/mode';
 
 interface SkillGroup {
   label: string;
@@ -27,78 +25,29 @@ interface SkillGroup {
 })
 export class Hero implements AfterViewInit {
   private readonly contact = inject(Contact);
-  private readonly modeService = inject(ModeService);
 
   protected readonly profileImage = 'assets/testImg.jpeg';
   protected readonly name = 'Yassine Tazi';
+  protected readonly role = 'Developer & Designer';
   protected readonly description =
-    'Final-year Multimedia & Creative Technologies student at Erasmus University Brussels. I create responsive sites, mobile apps, and visual identities with a focus on clear structure, bold typography, and smooth user journeys.';
+    'Websites, apps, and brand systems — clean structure, bold type, smooth UX.';
   protected readonly servicePillars = [
     'Web design',
-    'Front-end development',
+    'Front-end',
     'Mobile apps',
     'Brand identity',
-    'UI systems',
-    'Motion details',
-  ];
-  protected readonly proofPoints = [
-    { value: '10+', label: 'Projects shipped' },
-    { value: '2', label: 'Creative modes' },
-    { value: 'BE', label: 'Based in Vilvoorde' },
   ];
 
-  protected readonly mode = this.modeService.mode;
-
-  protected readonly role = computed<string>(() =>
-    this.mode() === 'developer' ? 'Front-end Developer' : 'Graphic Designer'
-  );
-
-  protected readonly tagline = computed<string>(() =>
-    this.mode() === 'developer'
-      ? 'Built for clean digital launches.'
-      : 'Visual systems for brands with momentum.'
-  );
-
-  protected readonly focus = computed<string>(() =>
-    this.mode() === 'developer' ? 'React & TS' : 'Brand & UI'
-  );
-
-  private readonly developerSkills: SkillGroup = {
-    label: 'Technical toolkit',
-    items: [
-      'React',
-      'TypeScript',
-      'React Native',
-      'JavaScript',
-      'HTML & CSS',
-      'WebRTC',
-      'MongoDB',
-      'Git',
-      'Vite',
-      'Figma',
-    ],
-  };
-
-  private readonly designerSkills: SkillGroup = {
-    label: 'Design toolkit',
-    items: [
-      'Logo Design',
-      'Brand Identity',
-      'Web Design',
-      'App Design',
-      'Poster & Flyer',
-      'Social Media',
-      'Adobe Illustrator',
-      'Adobe Premiere',
-      'Style Guides',
-      'Typography',
-    ],
-  };
-
-  protected readonly skillGroup = computed<SkillGroup>(() =>
-    this.mode() === 'developer' ? this.developerSkills : this.designerSkills
-  );
-  protected readonly skillGroups = [this.developerSkills, this.designerSkills];
+  protected readonly skillGroups: SkillGroup[] = [
+    {
+      label: 'Tech',
+      items: ['React', 'TypeScript', 'React Native', 'JavaScript', 'HTML & CSS', 'MongoDB', 'Git', 'Figma'],
+    },
+    {
+      label: 'Design',
+      items: ['Brand identity', 'Web design', 'App design', 'Illustrator', 'Typography'],
+    },
+  ];
 
   @ViewChild('titleRef', { static: true }) private titleRef?: ElementRef<HTMLElement>;
   @ViewChild('roleRef', { static: true }) private roleRef?: ElementRef<HTMLElement>;
@@ -107,18 +56,6 @@ export class Hero implements AfterViewInit {
 
   ngAfterViewInit() {
     this.runIntroAnimation();
-  }
-
-  protected formatIndex(index: number): string {
-    return (index + 1).toString().padStart(2, '0');
-  }
-
-  protected setMode(next: PortfolioMode) {
-    if (this.mode() === next) {
-      return;
-    }
-
-    this.modeService.set(next);
   }
 
   protected openContactPopup() {

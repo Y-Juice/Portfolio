@@ -10,8 +10,6 @@ import {
   QueryList,
   ViewChildren,
   computed,
-  effect,
-  inject,
   signal,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,7 +17,6 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { gsap } from 'gsap';
 
 import { Project, ProjectService } from '../../services/project';
-import { ModeService, PortfolioMode } from '../../services/mode';
 
 @Component({
   selector: 'app-portfolio',
@@ -32,36 +29,18 @@ export class Portfolio implements OnInit, AfterViewInit {
   private readonly allProjects = signal<Project[]>([]);
   protected readonly error = signal<string | null>(null);
 
-  private readonly modeService = inject(ModeService);
-  protected readonly mode = this.modeService.mode;
-
-  protected readonly projects = computed(() =>
-    this.allProjects().filter((project) => project.type === this.mode())
+  protected readonly developerProjects = computed(() =>
+    this.allProjects().filter((project) => project.type === 'developer')
   );
 
-  protected readonly sectionMeta = computed(() =>
-    this.mode() === 'developer'
-      ? {
-          eyebrow: 'Selected ecommerce-minded builds',
-          subtitle:
-            'Responsive web and app projects shaped like small launch systems: clear pages, sharp interfaces, and focused user flows.',
-        }
-      : {
-          eyebrow: 'Brand and interface systems',
-          subtitle:
-            'Visual identities, editorial layouts, and digital design work built to feel direct, structured, and memorable.',
-        }
+  protected readonly designerProjects = computed(() =>
+    this.allProjects().filter((project) => project.type === 'designer')
   );
 
   @Output() projectSelected = new EventEmitter<Project>();
   @ViewChildren('projectCard') private projectCards?: QueryList<ElementRef<HTMLElement>>;
 
-  constructor(private projectService: ProjectService, private destroyRef: DestroyRef) {
-    effect(() => {
-      this.mode();
-      queueMicrotask(() => this.animateCards());
-    });
-  }
+  constructor(private projectService: ProjectService, private destroyRef: DestroyRef) {}
 
   ngOnInit() {
     this.projectService
@@ -82,14 +61,6 @@ export class Portfolio implements OnInit, AfterViewInit {
 
   protected openProject(project: Project) {
     this.projectSelected.emit(project);
-  }
-
-  protected setMode(next: PortfolioMode) {
-    this.modeService.set(next);
-  }
-
-  protected formatIndex(index: number): string {
-    return (index + 1).toString().padStart(2, '0');
   }
 
   private animateCards() {

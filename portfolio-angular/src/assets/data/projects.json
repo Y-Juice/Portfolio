@@ -20,21 +20,6 @@
       "githubUrlEnable": "true"
     },
     {
-      "id": "event-planner",
-      "type": "developer",
-      "title": "Event Planner",
-      "shortDescription": "Expo/React Native app for planning and browsing events.",
-      "thumbnail": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
-      "fullImage": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
-      "technologies": ["React Native", "Expo", "TypeScript"],
-      "longDescription": "A mobile-first event planning experience with browsing, details, and streamlined navigation built on Expo and React Native.",
-      "features": ["Event browsing and details", "Mobile-first UX", "TypeScript-first codebase"],
-      "demoUrl": "https://event-planner-ten-lyart.vercel.app/",
-      "githubUrl": "https://github.com/Y-Juice/eventPlanner",
-      "liveDemoEnable": "true",
-      "githubUrlEnable": "true"
-    },
-    {
       "id": "petit-moments",
       "type": "developer",
       "title": "Petit Moments",
@@ -50,82 +35,6 @@
       ],
       "liveDemoEnable": "false",
       "githubUrlEnable": "false"
-    },
-    {
-      "id": "1",
-      "type": "developer",
-      "title": "Yaqin Muslim Toolbox",
-      "shortDescription": "A website that helps muslims find useful resources.",
-      "thumbnail": "assets/yaqinThumb.png",
-      "fullImage": "assets/yaqin.png",
-      "technologies": ["MongoDB", "Node.js", "CRUD", "CSS", "Javascript"],
-      "longDescription": "Muslims have to cover themselves from the knee to above the belly button. Clothing that fits these criteria can be hard to find  that is why I wanted to create a hub for muslims with clothing and useful books.",
-      "features": [
-        "CRUD system",
-        "Catalogue of clothing and books from third parties.",
-        "Responsive design for all device sizes"
-      ],
-      "demoUrl": "https://github.com/EHB-MCT/web2-course-project-front-end-YassineTazi2022/",
-      "githubUrl": "https://github.com/EHB-MCT/web2-course-project-front-end-YassineTazi2022/",
-      "liveDemoEnable": "false",
-      "githubUrlEnable": "true"
-    },
-    {
-      "id": "2",
-      "type": "developer",
-      "title": "RentaSPEED 3D-showcase",
-      "shortDescription": "Three.js powered 3D gallery showcasing cars available for rent.",
-      "thumbnail": "assets/rentaspeedThumb.png",
-      "fullImage": "assets/rentaspeed.png",
-      "technologies": ["three.js", "CSS", "Javascript"],
-      "longDescription": "An example of how three.js can be used to elevated the user experience and leave a mark on the user. A car rental website that shows of it's rentable cars as a 3d model in a virtual garage. ",
-      "features": ["Welcome page for car rental company", "3D car showcase", "CSS animations"],
-      "demoUrl": "https://y-juice.github.io/ThreeJS/",
-      "githubUrl": "https://github.com/Y-Juice/ThreeJS/",
-      "liveDemoEnable": "false",
-      "githubUrlEnable": "true"
-    },
-    {
-      "id": "3",
-      "type": "developer",
-      "title": "The Question of Palestine",
-      "shortDescription": "The Question of Palestine is an educational website designed to inform users about the history of the Palestine-Israel conflict.",
-      "thumbnail": "assets/palestineThumb.png",
-      "fullImage": "assets/palestine.png",
-      "technologies": ["React", "GSAP", "Vite", "CSS", "Javascript"],
-      "longDescription": "The Question of Palestine is an educational platform designed to inform users about the history of the Palestine-Israel conflict. By presenting key events with credible, linked sources, the site encourages independent research and critical thinking, empowering users to form their own educated opinions.",
-      "features": [
-        "Interactive Timeline",
-        "Typewriter Effect",
-        "Scroll Indicator",
-        "Smooth Navigation"
-      ],
-      "demoUrl": "https://questionofpalestine.vercel.app/",
-      "githubUrl": "https://github.com/Y-Juice/timeline-project",
-      "liveDemoEnable": "true",
-      "githubUrlEnable": "true"
-    },
-    {
-      "id": "4",
-      "type": "developer",
-      "title": "Omeletaz",
-      "shortDescription": "OmeleTaz is a real-time video chat application.",
-      "thumbnail": "assets/omeletazThumb.png",
-      "fullImage": "assets/omeletaz.png",
-      "technologies": ["React", "Firebase", "WebRTC", "Vite", "CSS", "Javascript"],
-      "longDescription": "OmeleTaz is a real-time video chat application built using React, Firebase Firestore, and WebRTC. This application allows users to Chat and meet other users.",
-      "features": [
-        "Start a webcam video stream",
-        "Create a new video call",
-        "Join an existing video call",
-        "Real-time communication using Firestore",
-        "Responsive design for all device sizes",
-        "Peer-to-peer connection using WebRTC"
-      ],
-      "demoUrl": "https://y-juice.github.io/omeletaz/",
-      "githubUrl": "https://github.com/Y-Juice/omeletaz",
-      "liveDemoEnable": "true",
-      "githubUrlEnable": "true"
     },
     {
       "id": "5",
@@ -156,23 +65,6 @@
         "Tone of voice and messaging guidelines",
         "Bilingual (NL/FR) social media content and event visuals",
         "Consistent visual output across Instagram and community platforms"
-      ],
-      "liveDemoEnable": "false",
-      "githubUrlEnable": "false"
-    },
-    {
-      "id": "intera-studio",
-      "type": "designer",
-      "title": "Intera Studio",
-      "shortDescription": "Design system tool for building structured style guides and CSS tokens.",
-      "thumbnail": "https://images.unsplash.com/photo-1561070791-2526d30994b8?auto=format&fit=crop&w=900&q=80",
-      "fullImage": "https://images.unsplash.com/photo-1561070791-2526d30994b8?auto=format&fit=crop&w=1400&q=80",
-      "technologies": ["Design Tokens", "Style Guides", "CSS"],
-      "longDescription": "Tool for building structured style guides and centralised CSS design system files — collecting colors, typography, spacing, and components in one maintainable source of truth.",
-      "features": [
-        "Scalable design token system (color, type scale, spacing)",
-        "Exportable CSS files consumable in front-end projects",
-        "Bridges the gap between Figma design and development"
       ],
       "liveDemoEnable": "false",
       "githubUrlEnable": "false"

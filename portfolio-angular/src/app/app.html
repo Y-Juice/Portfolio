@@ -8,8 +8,7 @@
       <button type="button" (click)="openContactPopup()">Contact</button>
     </nav>
     <div class="header-actions">
-      <button class="header-cta" type="button" (click)="openContactPopup()">Work With Me</button>
-      <app-theme-toggle></app-theme-toggle>
+      <button class="header-cta" type="button" (click)="openContactPopup()">Start a project</button>
     </div>
   </div>
 </header>
@@ -21,11 +20,18 @@
 
 <footer class="site-footer">
   <div class="site-footer-inner">
-    <div>
-      <span class="footer-kicker">Planning a project?</span>
-      <strong>Let us build something clean, fast, and useful.</strong>
+    <div class="footer-brand">
+      <a class="masthead-title" href="#" aria-label="Yassine Tazi portfolio home">Yassine Tazi</a>
     </div>
-    <button class="footer-link" type="button" (click)="openContactPopup()">Get in touch</button>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <button type="button" (click)="openContactPopup()">Contact</button>
+    </nav>
+    <div class="footer-meta">
+      <button class="footer-link" type="button" (click)="openContactPopup()">Start a project</button>
+    </div>
   </div>
 </footer>
 
@@ -38,18 +44,14 @@
     (click)="$event.stopPropagation()"
   >
     <div class="contact-top">
-      <span>Contact info</span>
+      <span>Contact</span>
       <button type="button" aria-label="Close contact popup" (click)="closeContactPopup()">
         Close &times;
       </button>
     </div>
 
     <div class="contact-body">
-      <p class="contact-kicker">Let us talk</p>
       <h2 id="contact-title">Work with me</h2>
-      <p class="contact-copy">
-        Reach out for front-end projects, app ideas, brand identity work, or portfolio feedback.
-      </p>
 
       <div class="contact-list">
         @for (item of contact.items; track item.label) {

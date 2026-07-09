@@ -6,6 +6,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnDestroy,
   Output,
   SimpleChanges,
   ViewChild,
@@ -22,7 +23,7 @@ import { Project } from '../../services/project';
   styleUrl: './project-modal.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectModal implements OnChanges, AfterViewInit {
+export class ProjectModal implements OnChanges, AfterViewInit, OnDestroy {
   @Input({ required: true }) project: Project | null = null;
   @Output() closed = new EventEmitter<void>();
 
@@ -31,17 +32,26 @@ export class ProjectModal implements OnChanges, AfterViewInit {
 
   ngAfterViewInit() {
     if (this.project) {
+      this.lockScroll();
       this.animateOpen();
     }
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['project']?.currentValue && this.dialog) {
-      queueMicrotask(() => this.animateOpen());
+    if (changes['project']?.currentValue) {
+      this.lockScroll();
+      if (this.dialog) {
+        queueMicrotask(() => this.animateOpen());
+      }
     }
   }
 
+  ngOnDestroy() {
+    this.unlockScroll();
+  }
+
   protected close() {
+    this.unlockScroll();
     this.closed.emit();
   }
 
@@ -49,6 +59,14 @@ export class ProjectModal implements OnChanges, AfterViewInit {
     if (event.target === this.overlay?.nativeElement) {
       this.close();
     }
+  }
+
+  private lockScroll() {
+    document.body.style.overflow = 'hidden';
+  }
+
+  private unlockScroll() {
+    document.body.style.overflow = '';
   }
 
   private animateOpen() {
@@ -64,8 +82,8 @@ export class ProjectModal implements OnChanges, AfterViewInit {
 
     gsap.fromTo(
       this.dialog.nativeElement,
-      { y: 30, opacity: 0, scale: 0.98 },
-      { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: 'power3.out' }
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.35, ease: 'power3.out' }
     );
   }
 }

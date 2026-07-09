@@ -1,25 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'The Neue';
+  src: url('assets/fonts/TheNeue-Black.woff2') format('woff2'),
+    url('assets/fonts/TheNeue-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  --ink: #0f0e0c;
-  --paper: #f5f2eb;
-  --accent: #c84b2f;
-  --sand: #e7dfd2;
-  --muted: #8a8478;
-  --line: #d8d3c8;
-  --surface: #fffaf0;
-  --surface-soft: #eee7da;
-  --radius-sm: 16px;
-  --radius-md: 24px;
-  --radius-lg: 36px;
-  --shadow-soft: 0 24px 70px color-mix(in srgb, var(--ink) 14%, transparent);
-  --correct: #2d7a4f;
-  --wrong: #c84b2f;
+  --bg: #f5f0e8;
+  --bg-secondary: #ede8df;
+  --cream: #fff0e4;
+  --teal: #c1440e;
+  --teal-deep: #a8380b;
+  --teal-soft: rgba(193, 68, 14, 0.12);
+  --red: #2aadcc;
+  --red-hover: #228fa8;
+  --lime: #acc639;
+  --dark: #1a1a1a;
+  --muted: #666666;
+  --muted-light: #999999;
+  --white: #ffffff;
 
-  --font-display: 'DM Sans', Arial, sans-serif;
-  --font-serif: 'DM Sans', Arial, sans-serif;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --ink: var(--dark);
+  --paper: var(--bg);
+  --accent: var(--red);
+  --green: var(--lime);
+  --cyan: var(--teal);
+  --sand: var(--bg-secondary);
+  --muted: var(--muted);
+  --line: var(--teal);
+  --surface: var(--cream);
+  --surface-soft: var(--bg-secondary);
+  --correct: var(--lime);
+  --wrong: var(--red);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 46px;
+  --radius-pill: 100px;
+
+  --shadow-sm: 0 1px 2px rgba(26, 26, 26, 0.04);
+  --shadow-md: 0 8px 24px rgba(26, 26, 26, 0.06);
+  --shadow-nav: 0 1px 0 rgba(26, 26, 26, 0.06);
+
+  --font-display: 'The Neue', sans-serif;
+  --font-serif: 'The Neue', sans-serif;
+  --font-sans: 'Space Mono', monospace;
+  --font-mono: 'Space Mono', monospace;
 
   --space-xs: 0.35rem;
   --space-sm: 0.75rem;
@@ -27,21 +58,27 @@
   --space-lg: 1.5rem;
   --space-xl: 2.5rem;
   --space-2xl: 3rem;
-  --space-3xl: 4.5rem;
+  --space-3xl: clamp(5rem, 12vw, 10rem);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 0.18s;
+  --duration-normal: 0.35s;
 }
 
 :root[data-theme='dark'] {
-  --ink: #f5f2eb;
-  --paper: #0f0e0c;
-  --accent: #e46b4d;
-  --sand: #2a2721;
-  --muted: #aaa297;
-  --line: #38342c;
-  --surface: #191713;
-  --surface-soft: #25211c;
-  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.35);
-  --correct: #6fca96;
-  --wrong: #e46b4d;
+  --bg: #1a1a1a;
+  --bg-secondary: #242424;
+  --cream: #2a2a2a;
+  --dark: #f5f0e8;
+  --muted: #b0b0b0;
+  --muted-light: #888888;
+  --teal-soft: rgba(193, 68, 14, 0.2);
+
+  --ink: var(--dark);
+  --paper: var(--bg);
+  --sand: var(--bg-secondary);
+  --surface: var(--cream);
+  --surface-soft: var(--bg-secondary);
 }
 
 *,
@@ -57,7 +94,8 @@ body {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
   background: var(--paper);
   color: var(--ink);
   line-height: 1.7;
@@ -67,29 +105,10 @@ body {
   transition: background 0.25s ease, color 0.25s ease;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 14%, transparent), transparent 30rem),
-    radial-gradient(circle at bottom right, color-mix(in srgb, var(--sand) 70%, transparent), transparent 32rem);
-  opacity: 0.8;
-  pointer-events: none;
-  z-index: 0;
-}
-
 a {
   color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--line);
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.2s ease, color 0.2s ease;
-}
-
-a:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
 }
 
 button {
@@ -103,25 +122,26 @@ h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 900;
-  color: var(--ink);
+  color: var(--teal);
   margin: 0;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.02em;
 }
 
 p {
   margin: 0;
+  font-family: var(--font-mono);
 }
 
 ::selection {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--teal-soft);
+  color: var(--ink);
 }
 
-/* Shared utility classes */
 .label-mono {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--teal);
 }

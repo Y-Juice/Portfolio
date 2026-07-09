@@ -23,8 +23,9 @@ export class Contact {
       href: 'https://www.linkedin.com/in/yassine-tazi2004',
     },
     {
-      label: 'Phone',
-      value: 'Available on request',
+      label: 'Freelance',
+      value: 'wara.studio',
+      href: 'https://www.wara.studio',
     },
   ];
 

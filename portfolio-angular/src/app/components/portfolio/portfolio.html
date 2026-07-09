@@ -1,46 +1,57 @@
 <section class="portfolio" id="work">
-  <div class="portfolio-header">
-    <span class="section-eyebrow">{{ sectionMeta().eyebrow }}</span>
-    <h2>{{ mode() === 'developer' ? 'Digital work that moves' : 'Design work that leads' }}</h2>
-    <p class="subtitle">{{ sectionMeta().subtitle }}</p>
-  </div>
-
-  <div class="portfolio-list" *ngIf="projects().length; else emptyState">
-    <article
-      class="project-card"
-      *ngFor="let project of projects(); let i = index"
-      (click)="openProject(project)"
-      #projectCard
-    >
-      <div class="project-index">
-        <span class="index-num">{{ formatIndex(i) }}</span>
-        <span class="index-label">Entry</span>
-      </div>
-
-      <div class="project-img" [style.backgroundImage]="'url(' + project.thumbnail + ')'"></div>
-
-      <div class="project-content">
-        <span class="project-type">{{ project.type === 'developer' ? 'Build' : 'Design' }}</span>
-        <h3>{{ project.title }}</h3>
-        <p class="excerpt">{{ project.shortDescription }}</p>
-        <div class="tags">
-          <span class="tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
-        </div>
-      </div>
-
-      <div class="project-cta">
-        <span class="cta-text">View project</span>
-        <span class="cta-arrow">&rarr;</span>
-      </div>
-    </article>
-  </div>
-
-  <ng-template #emptyState>
-    <div class="empty-state">
-      <span class="empty-label">No entries</span>
-      <p>No projects in this mode yet.</p>
+  <div class="portfolio-section" id="development-work">
+    <div class="portfolio-header">
+      <h2>Development</h2>
     </div>
-  </ng-template>
+
+    <div class="portfolio-list" *ngIf="developerProjects().length; else devEmptyState">
+      <article
+        class="project-card"
+        *ngFor="let project of developerProjects()"
+        (click)="openProject(project)"
+        #projectCard
+      >
+        <div class="project-img" [style.backgroundImage]="'url(' + project.thumbnail + ')'"></div>
+        <div class="project-body">
+          <h3>{{ project.title }}</h3>
+          <span class="cta-text">View &rarr;</span>
+        </div>
+      </article>
+    </div>
+
+    <ng-template #devEmptyState>
+      <div class="empty-state">
+        <p>No projects yet.</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="portfolio-section" id="design-work">
+    <div class="portfolio-header">
+      <h2>Design</h2>
+    </div>
+
+    <div class="portfolio-list" *ngIf="designerProjects().length; else designEmptyState">
+      <article
+        class="project-card"
+        *ngFor="let project of designerProjects()"
+        (click)="openProject(project)"
+        #projectCard
+      >
+        <div class="project-img" [style.backgroundImage]="'url(' + project.thumbnail + ')'"></div>
+        <div class="project-body">
+          <h3>{{ project.title }}</h3>
+          <span class="cta-text">View &rarr;</span>
+        </div>
+      </article>
+    </div>
+
+    <ng-template #designEmptyState>
+      <div class="empty-state">
+        <p>No projects yet.</p>
+      </div>
+    </ng-template>
+  </div>
 
   <p class="error" *ngIf="error()">{{ error() }}</p>
 </section>
