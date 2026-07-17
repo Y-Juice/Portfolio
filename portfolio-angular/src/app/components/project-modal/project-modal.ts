@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
@@ -10,6 +11,7 @@ import {
   Output,
   SimpleChanges,
   ViewChild,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap';
@@ -30,6 +32,10 @@ export class ProjectModal implements OnChanges, AfterViewInit, OnDestroy {
   @ViewChild('overlay') private overlay?: ElementRef<HTMLDivElement>;
   @ViewChild('dialog') private dialog?: ElementRef<HTMLDivElement>;
 
+  protected carouselIndexes: number[] = [];
+
+  private readonly cdr = inject(ChangeDetectorRef);
+
   ngAfterViewInit() {
     if (this.project) {
       this.lockScroll();
@@ -39,6 +45,7 @@ export class ProjectModal implements OnChanges, AfterViewInit, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['project']?.currentValue) {
+      this.resetCarousels();
       this.lockScroll();
       if (this.dialog) {
         queueMicrotask(() => this.animateOpen());
@@ -59,6 +66,43 @@ export class ProjectModal implements OnChanges, AfterViewInit, OnDestroy {
     if (event.target === this.overlay?.nativeElement) {
       this.close();
     }
+  }
+
+  protected prevSlide(postIndex: number) {
+    const post = this.project?.instagramPosts?.[postIndex];
+    if (!post?.images.length) {
+      return;
+    }
+
+    const current = this.carouselIndexes[postIndex] ?? 0;
+    this.carouselIndexes[postIndex] =
+      (current - 1 + post.images.length) % post.images.length;
+    this.cdr.markForCheck();
+  }
+
+  protected nextSlide(postIndex: number) {
+    const post = this.project?.instagramPosts?.[postIndex];
+    if (!post?.images.length) {
+      return;
+    }
+
+    const current = this.carouselIndexes[postIndex] ?? 0;
+    this.carouselIndexes[postIndex] = (current + 1) % post.images.length;
+    this.cdr.markForCheck();
+  }
+
+  protected goToSlide(postIndex: number, slideIndex: number) {
+    this.carouselIndexes[postIndex] = slideIndex;
+    this.cdr.markForCheck();
+  }
+
+  protected instagramHref(handle: string) {
+    return `https://www.instagram.com/${handle}/`;
+  }
+
+  private resetCarousels() {
+    const count = this.project?.instagramPosts?.length ?? 0;
+    this.carouselIndexes = Array.from({ length: count }, () => 0);
   }
 
   private lockScroll() {

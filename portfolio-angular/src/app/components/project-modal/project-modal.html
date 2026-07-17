@@ -17,6 +17,15 @@
     <div class="modal-body">
       <div class="modal-intro">
         <h2>{{ project?.title }}</h2>
+        <a
+          *ngIf="project?.instagramHandle && project?.instagramUrl"
+          class="project-instagram"
+          [href]="project?.instagramUrl"
+          target="_blank"
+          rel="noreferrer"
+        >
+          @{{ project?.instagramHandle }}
+        </a>
       </div>
       <p class="long-description">{{ project?.longDescription }}</p>
 
@@ -54,6 +63,139 @@
         >
           View on GitHub &rarr;
         </a>
+
+        <a
+          *ngIf="project?.instagramHandle && project?.instagramUrl"
+          class="button ghost"
+          [href]="project?.instagramUrl"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Instagram &rarr;
+        </a>
+      </div>
+
+      <div
+        class="modal-section visuals-section"
+        *ngIf="project?.beforeAfter || project?.instagramPosts?.length || project?.gallery?.length"
+      >
+        <h3>Visuals</h3>
+
+        <div class="before-after" *ngIf="project?.beforeAfter as comparison">
+          <h4 class="before-after-title">Logo redesign</h4>
+          <div class="before-after-grid">
+            <figure class="before-after-item">
+              <div class="before-after-frame">
+                <img
+                  [src]="comparison.before"
+                  [alt]="(comparison.beforeLabel || 'Before') + ' logo'"
+                />
+              </div>
+              <figcaption>{{ comparison.beforeLabel || 'Before' }}</figcaption>
+            </figure>
+
+            <span class="before-after-arrow" aria-hidden="true">&rarr;</span>
+
+            <figure class="before-after-item">
+              <div class="before-after-frame">
+                <img
+                  [src]="comparison.after"
+                  [alt]="(comparison.afterLabel || 'After') + ' logo'"
+                />
+              </div>
+              <figcaption>{{ comparison.afterLabel || 'After' }}</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="ig-posts" *ngIf="project?.instagramPosts?.length">
+          <article
+            class="ig-post"
+            *ngFor="let post of project?.instagramPosts; let postIndex = index"
+          >
+            <header class="ig-header">
+              <div class="ig-avatar" aria-hidden="true">
+                {{ post.handle.charAt(0).toUpperCase() }}
+              </div>
+              <a
+                class="ig-handle"
+                [href]="instagramHref(post.handle)"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {{ post.handle }}
+              </a>
+            </header>
+
+            <div class="ig-carousel">
+              <div
+                class="ig-track"
+                [style.transform]="'translateX(-' + (carouselIndexes[postIndex] || 0) * 100 + '%)'"
+              >
+                <div class="ig-slide" *ngFor="let image of post.images">
+                  <img [src]="image" [alt]="project?.title + ' Instagram post'" />
+                </div>
+              </div>
+
+              <button
+                *ngIf="post.images.length > 1"
+                class="ig-nav ig-nav-prev"
+                type="button"
+                aria-label="Previous image"
+                (click)="prevSlide(postIndex)"
+              >
+                &#8249;
+              </button>
+              <button
+                *ngIf="post.images.length > 1"
+                class="ig-nav ig-nav-next"
+                type="button"
+                aria-label="Next image"
+                (click)="nextSlide(postIndex)"
+              >
+                &#8250;
+              </button>
+
+              <div class="ig-dots" *ngIf="post.images.length > 1">
+                <button
+                  *ngFor="let image of post.images; let slideIndex = index"
+                  type="button"
+                  class="ig-dot"
+                  [class.active]="(carouselIndexes[postIndex] || 0) === slideIndex"
+                  [attr.aria-label]="'Go to image ' + (slideIndex + 1)"
+                  (click)="goToSlide(postIndex, slideIndex)"
+                ></button>
+              </div>
+            </div>
+
+            <div class="ig-actions" aria-hidden="true">
+              <span class="ig-action-icons">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                </svg>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 11.5a8.4 8.4 0 0 1-2.5 6L12 22l-6.5-4.5A8.5 8.5 0 1 1 21 11.5z" />
+                </svg>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2 11 13" />
+                  <path d="M22 2 15 22l-4-9-9-4 20-7z" />
+                </svg>
+              </span>
+              <span class="ig-count">
+                {{ (carouselIndexes[postIndex] || 0) + 1 }} / {{ post.images.length }}
+              </span>
+            </div>
+          </article>
+        </div>
+
+        <div class="gallery" *ngIf="project?.gallery?.length">
+          <img
+            *ngFor="let image of project?.gallery"
+            [src]="image"
+            [alt]="project?.title"
+            class="gallery-image"
+          />
+        </div>
       </div>
     </div>
   </div>

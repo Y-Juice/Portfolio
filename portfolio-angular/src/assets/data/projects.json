@@ -23,15 +23,26 @@
       "id": "petit-moments",
       "type": "developer",
       "title": "Petit Moments",
-      "shortDescription": "Bachelor thesis app: pin personal memories to real-world locations.",
-      "thumbnail": "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80",
-      "fullImage": "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1400&q=80",
-      "technologies": ["React Native", "MongoDB", "Maps API"],
-      "longDescription": "Mobile app where users pin personal memories to real-world locations on a map, then connect moments across different users to collaboratively build shared stories.",
+      "shortDescription": "Bachelorproef app: pin personal moments on a map and connect them into a shared story.",
+      "thumbnail": "assets/petitmoments/KeyImagePetitMoments.jpg",
+      "fullImage": "assets/petitmoments/KeyImagePetitMoments.jpg",
+      "gallery": [
+        "assets/petitmoments/KeyImagePetitMoments.jpg",
+        "assets/petitmoments/pmLogo.png",
+        "assets/petitmoments/pmHuisstijlgids.png",
+        "assets/petitmoments/Screenshot_20260608_133524_Expo Go.jpg",
+        "assets/petitmoments/Screenshot_20260608_133531_Expo Go.jpg",
+        "assets/petitmoments/Screenshot_20260608_133546_Expo Go.jpg",
+        "assets/petitmoments/Screenshot_20260608_133616_Expo Go.jpg",
+        "assets/petitmoments/Screenshot_20260608_133752_Expo Go.jpg"
+      ],
+      "technologies": ["React Native", "Expo", "MongoDB", "Maps API"],
+      "longDescription": "Petit Moments is my bachelorproef — an app I fully designed and developed. Users pin personal moments and anecdotes on a map to share their story. For example, after a trip to London you can place each fun moment on the map, then follow them as a playlist through the rode draad: a red string that connects every moment into one continuous narrative.",
       "features": [
-        "Location-based memory pinning with interactive map",
-        "Cross-user story threading into a collective narrative",
-        "Full UX/UI designed in Figma"
+        "Pin personal moments and anecdotes on an interactive map",
+        "Rode draad: follow connected moments like a playlist along a red string",
+        "Share location-based stories others can walk through",
+        "Fully designed and developed as bachelorproef"
       ],
       "liveDemoEnable": "false",
       "githubUrlEnable": "false"
@@ -43,6 +54,7 @@
       "shortDescription": "AK Building Solutions is a Belgium based electric start-up.",
       "thumbnail": "assets/akbuildingThumb.png",
       "fullImage": "assets/akBuildingSolutions.png",
+      "thumbnailBackground": "#CBE3F3",
       "technologies": ["HTML", "CSS", "Javascript"],
       "longDescription": "AK Building Solutions is a Belgium based electric start-up, they needed me to create a sleek and modern website that allows them to attract more customers. In addition I created a typographic logo and worked together with them to find a good look and feel of their brand.",
       "features": ["Contact function that sends e-mail automatically", "Translate button"],
@@ -55,16 +67,94 @@
       "id": "jongeren-annasr",
       "type": "designer",
       "title": "Jongeren Annasr",
-      "shortDescription": "End-to-end visual identity and content strategy for a Vilvoorde youth organisation.",
-      "thumbnail": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=900&q=80",
-      "fullImage": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1400&q=80",
-      "technologies": ["Adobe Illustrator", "Figma", "Social Media Design"],
-      "longDescription": "End-to-end visual identity and content strategy for Jongeren Annasr, a Vilvoorde-based youth organisation. The brand was developed from the ground up and extended across print and digital touchpoints.",
+      "shortDescription": "Visual identity, social media and communication for a youth vzw in Vilvoorde.",
+      "thumbnail": "assets/JongerenAnnasr/jongerenannasrLogoDark.png",
+      "fullImage": "assets/JongerenAnnasr/jongerenannasrbuurtfeest.png",
+      "beforeAfter": {
+        "before": "assets/JongerenAnnasr/JongerenannasrLogoBefore.png",
+        "after": "assets/JongerenAnnasr/jongerenannasrLogoDark.png",
+        "beforeLabel": "Before",
+        "afterLabel": "After"
+      },
+      "gallery": [
+        "assets/JongerenAnnasr/jongerenannasrbuurtfeest.png",
+        "assets/JongerenAnnasr/JongerenAnnasrMening.png"
+      ],
+      "instagramPosts": [
+        {
+          "handle": "jongerenannasr",
+          "images": [
+            "assets/JongerenAnnasr/OnzeMissie1.png",
+            "assets/JongerenAnnasr/OnzeMissie2.png"
+          ]
+        }
+      ],
+      "instagramHandle": "jongerenannasr",
+      "instagramUrl": "https://www.instagram.com/jongerenannasr/",
+      "technologies": ["Adobe Illustrator", "Brand Identity", "Social Media"],
+      "longDescription": "Design case for Jongeren Annasr, a vzw in Vilvoorde that organises activities for the youth of Vilvoorde. I manage their Instagram (@jongerenannasr) and create all graphics and communication needed — from the visual identity and logos to mission posts, opinion graphics, and event materials such as the buurtfeest poster.",
       "features": [
-        "Full brand identity: logo, color system, typography",
-        "Tone of voice and messaging guidelines",
-        "Bilingual (NL/FR) social media content and event visuals",
-        "Consistent visual output across Instagram and community platforms"
+        "Full visual identity and logo for a youth-focused vzw",
+        "Ongoing Instagram management and social content",
+        "All graphics and communication for the organisation",
+        "Event poster design (buurtfeest) using the full identity"
+      ],
+      "liveDemoEnable": "false",
+      "githubUrlEnable": "false"
+    },
+    {
+      "id": "zilal",
+      "type": "designer",
+      "title": "Zilal",
+      "shortDescription": "Mock brand identity for an e-commerce shop selling modest Islamic clothing for women.",
+      "thumbnail": "assets/Zilal/1.png",
+      "fullImage": "assets/Zilal/zalil full.jpg",
+      "thumbnailBackground": "#7A6185",
+      "gallery": [
+        "assets/Zilal/zalil full.jpg",
+        "assets/Zilal/ZALIL.jpg",
+        "assets/Zilal/ZALILsecondary.jpg"
+      ],
+      "instagramPosts": [
+        {
+          "handle": "zilal",
+          "images": [
+            "assets/Zilal/1.png",
+            "assets/Zilal/2.png"
+          ]
+        }
+      ],
+      "technologies": ["Logo Design", "Brand Identity", "E-commerce Branding"],
+      "longDescription": "Zilal is a mock case for an e-commerce shop selling modest Islamic clothing for women. The identity pairs an arched mark — a silhouette of a woman in hijab forming a subtle Z — with an elegant serif wordmark, built for a calm, contemporary fashion brand.",
+      "features": [
+        "Primary and secondary logo system",
+        "Icon mark with Islamic architectural arch and modest silhouette",
+        "Brand sheet and Instagram post visuals",
+        "Direction suited for an online modest-fashion shop"
+      ],
+      "liveDemoEnable": "false",
+      "githubUrlEnable": "false"
+    },
+    {
+      "id": "lions-eye-studio",
+      "type": "designer",
+      "title": "Lion's Eye Studio",
+      "shortDescription": "Custom logo redesign for a photography studio that needed to move away from an AI-generated mark.",
+      "thumbnail": "assets/Lionseyestudio/LionseyelogoDark.png",
+      "fullImage": "assets/Lionseyestudio/LionseyelogoDark.png",
+      "gallery": [
+        "assets/Lionseyestudio/LionseyelogoDark.png",
+        "assets/Lionseyestudio/LionseyelogoLight.png",
+        "assets/Lionseyestudio/lionseyelongLogo.png",
+        "assets/Lionseyestudio/lionseyelongLogodark.png"
+      ],
+      "technologies": ["Logo Design", "Brand Identity", "Typography"],
+      "longDescription": "Lion's Eye Studio is a photography studio that needed a new logo after their previous one was AI-generated. The owner realised that generating a logo with AI was a mistake — and that is when he came to me for a proper redesign. The new mark is a geometric line-art lion with a camera-lens eye, paired with a classic serif wordmark in dark and light variants.",
+      "features": [
+        "Custom geometric lion mark (line art, camera-lens eye)",
+        "Stacked and horizontal logo lockups",
+        "Dark and light colour variants for flexible use",
+        "Human-designed identity replacing an AI-generated logo"
       ],
       "liveDemoEnable": "false",
       "githubUrlEnable": "false"
@@ -73,15 +163,26 @@
       "id": "petit-moments-design",
       "type": "designer",
       "title": "Petit Moments — UX/UI",
-      "shortDescription": "Full UX/UI case for a location-based memory & storytelling app.",
-      "thumbnail": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=900&q=80",
-      "fullImage": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1400&q=80",
-      "technologies": ["Figma", "App Design", "UX Research"],
-      "longDescription": "UX/UI design of Petit Moments — the mobile app from my bachelor thesis. The case covers user flows, information architecture, and high-fidelity interface design in Figma.",
+      "shortDescription": "Full UX/UI and brand design for the Petit Moments bachelorproef app.",
+      "thumbnail": "assets/petitmoments/KeyImagePetitMoments.jpg",
+      "fullImage": "assets/petitmoments/KeyImagePetitMoments.jpg",
+      "gallery": [
+        "assets/petitmoments/pmLogo.png",
+        "assets/petitmoments/KeyImagePetitMoments.jpg",
+        "assets/petitmoments/pmHuisstijlgids.png",
+        "assets/petitmoments/Screenshot_20260608_133524_Expo Go.jpg",
+        "assets/petitmoments/Screenshot_20260608_133531_Expo Go.jpg",
+        "assets/petitmoments/Screenshot_20260608_133546_Expo Go.jpg",
+        "assets/petitmoments/Screenshot_20260608_133616_Expo Go.jpg",
+        "assets/petitmoments/Screenshot_20260608_133752_Expo Go.jpg"
+      ],
+      "technologies": ["Figma", "App Design", "Brand Identity"],
+      "longDescription": "UX/UI and brand design for Petit Moments, my bachelorproef app. The visual system centres on the rode draad — a red string woven through the logo and the map experience — connecting personal moments into one story. The case covers the logo, huisstijl, and high-fidelity mobile screens for pinning and following moments on the map.",
       "features": [
-        "Memory card, map view, and story timeline UI",
-        "User flow and information architecture",
-        "Design system ready for hand-off to development"
+        "Logo with the rode draad woven through the pm monogram",
+        "Huisstijlgids and key visual on a map with connected moments",
+        "Mobile UI for feed, map, moment detail, and creating posts",
+        "Design system ready for development"
       ],
       "liveDemoEnable": "false",
       "githubUrlEnable": "false"
@@ -93,6 +194,7 @@
       "shortDescription": "Typographic logo and brand look & feel for an electric start-up.",
       "thumbnail": "assets/akbuildingThumb.png",
       "fullImage": "assets/akBuildingSolutions.png",
+      "thumbnailBackground": "#CBE3F3",
       "technologies": ["Logo Design", "Brand Identity", "Typography"],
       "longDescription": "Typographic logo and brand identity for AK Building Solutions, a Belgium-based electric start-up. Worked directly with the founders to define the look and feel of the brand across digital touchpoints.",
       "features": [

@@ -11,7 +11,19 @@
         (click)="openProject(project)"
         #projectCard
       >
-        <div class="project-img" [style.backgroundImage]="'url(' + project.thumbnail + ')'"></div>
+        <div
+          class="project-img"
+          [style.backgroundColor]="
+            project.thumbnailBackground || thumbnailColors()[project.id] || '#e8e8e8'
+          "
+        >
+          <img
+            [src]="project.thumbnail"
+            [alt]="project.title"
+            [attr.crossorigin]="isExternalThumbnail(project.thumbnail) ? 'anonymous' : null"
+            (load)="onThumbnailLoad(project, $event)"
+          />
+        </div>
         <div class="project-body">
           <h3>{{ project.title }}</h3>
           <span class="cta-text">View &rarr;</span>
@@ -38,7 +50,19 @@
         (click)="openProject(project)"
         #projectCard
       >
-        <div class="project-img" [style.backgroundImage]="'url(' + project.thumbnail + ')'"></div>
+        <div
+          class="project-img"
+          [style.backgroundColor]="
+            project.thumbnailBackground || thumbnailColors()[project.id] || '#e8e8e8'
+          "
+        >
+          <img
+            [src]="project.thumbnail"
+            [alt]="project.title"
+            [attr.crossorigin]="isExternalThumbnail(project.thumbnail) ? 'anonymous' : null"
+            (load)="onThumbnailLoad(project, $event)"
+          />
+        </div>
         <div class="project-body">
           <h3>{{ project.title }}</h3>
           <span class="cta-text">View &rarr;</span>

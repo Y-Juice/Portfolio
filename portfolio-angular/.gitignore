@@ -11,6 +11,8 @@
 npm-debug.log
 yarn-error.log
 
+/assets/petitmoments/pmDemo.mp4
+
 # IDEs and editors
 .idea/
 .project

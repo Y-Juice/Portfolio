@@ -57,14 +57,25 @@ h2 {
 }
 
 .project-img {
+  position: relative;
   width: 33%;
   max-width: 33%;
   flex: 0 0 33%;
   min-height: 188px;
   align-self: stretch;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   border-radius: 0;
+  background-color: #e8e8e8;
+}
+
+.project-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .project-body {

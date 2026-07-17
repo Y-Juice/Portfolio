@@ -23,6 +23,11 @@ export class Contact {
       href: 'https://www.linkedin.com/in/yassine-tazi2004',
     },
     {
+      label: 'Instagram',
+      value: '@wara.studiodesign',
+      href: 'https://www.instagram.com/wara.studiodesign/',
+    },
+    {
       label: 'Freelance',
       value: 'wara.studio',
       href: 'https://www.wara.studio',

@@ -4,6 +4,18 @@ import { map, Observable } from 'rxjs';
 
 export type ProjectType = 'developer' | 'designer';
 
+export interface InstagramPost {
+  handle: string;
+  images: string[];
+}
+
+export interface BeforeAfter {
+  before: string;
+  after: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+}
+
 export interface Project {
   id: string;
   type: ProjectType;
@@ -11,6 +23,12 @@ export interface Project {
   shortDescription: string;
   thumbnail: string;
   fullImage: string;
+  thumbnailBackground?: string;
+  gallery?: string[];
+  beforeAfter?: BeforeAfter;
+  instagramPosts?: InstagramPost[];
+  instagramHandle?: string;
+  instagramUrl?: string;
   technologies: string[];
   longDescription: string;
   features: string[];
@@ -22,8 +40,24 @@ export interface Project {
 
 interface ProjectResponse {
   projects: Array<
-    Omit<Project, 'liveDemoEnable' | 'githubUrlEnable' | 'type'> & {
+    Omit<
+      Project,
+      | 'liveDemoEnable'
+      | 'githubUrlEnable'
+      | 'type'
+      | 'gallery'
+      | 'instagramPosts'
+      | 'beforeAfter'
+    > & {
       type?: ProjectType;
+      gallery?: string[];
+      beforeAfter?: {
+        before: string;
+        after: string;
+        beforeLabel?: string;
+        afterLabel?: string;
+      };
+      instagramPosts?: Array<{ handle: string; images: string[] }>;
       liveDemoEnable?: string;
       githubUrlEnable?: string;
     }
@@ -46,6 +80,20 @@ export class ProjectService {
           type: project.type ?? 'developer',
           thumbnail: this.normalizeAssetPath(project.thumbnail),
           fullImage: this.normalizeAssetPath(project.fullImage),
+          gallery: (project.gallery ?? []).map((path) =>
+            this.normalizeAssetPath(path)
+          ),
+          beforeAfter: project.beforeAfter
+            ? {
+                ...project.beforeAfter,
+                before: this.normalizeAssetPath(project.beforeAfter.before),
+                after: this.normalizeAssetPath(project.beforeAfter.after),
+              }
+            : undefined,
+          instagramPosts: (project.instagramPosts ?? []).map((post) => ({
+            handle: post.handle,
+            images: post.images.map((path) => this.normalizeAssetPath(path)),
+          })),
           liveDemoEnable: project.liveDemoEnable === 'true',
           githubUrlEnable: project.githubUrlEnable === 'true',
         }))
@@ -54,6 +102,17 @@ export class ProjectService {
   }
 
   private normalizeAssetPath(path: string) {
-    return path.replace('../assets', 'assets');
+    const normalized = path.replace('../assets', 'assets');
+
+    if (!normalized.startsWith('assets/')) {
+      return normalized;
+    }
+
+    return normalized
+      .split('/')
+      .map((segment, index) =>
+        index === 0 ? segment : encodeURIComponent(segment)
+      )
+      .join('/');
   }
 }
