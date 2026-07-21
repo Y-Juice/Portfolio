@@ -5,8 +5,13 @@
       "type": "developer",
       "title": "Thero Studio",
       "shortDescription": "Angular website toolkit where developers can customize, build and export their own all-in-one CSS file with all stylistic choices.",
-      "thumbnail": "https://images.unsplash.com/photo-1529429617124-aee1f1650a5c?auto=format&fit=crop&w=900&q=80",
-      "fullImage": "https://images.unsplash.com/photo-1529429617124-aee1f1650a5c?auto=format&fit=crop&w=1400&q=80",
+      "thumbnail": "assets/theroStudio/Schermafbeelding 2026-07-21 175711.png",
+      "fullImage": "assets/theroStudio/Schermafbeelding 2026-07-21 175711.png",
+      "gallery": [
+        "assets/theroStudio/Schermafbeelding 2026-07-21 175711.png",
+        "assets/theroStudio/Schermafbeelding 2026-07-21 175933.png",
+        "assets/theroStudio/Schermafbeelding 2026-07-21 180024.png"
+      ],
       "technologies": ["Angular", "TypeScript", "SCSS"],
       "longDescription": "Angular website toolkit where developers can customize, build and export their own all-in-one CSS file with all stylistic choices. As well as being able to export a full starting file for react and angular, including your CSS file.",
       "features": [
